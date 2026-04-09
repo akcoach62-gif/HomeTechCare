@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HomeTechCare.us | Simple help for your home technology</title>
+  <meta
+    name="description"
+    content="HomeTechCare provides friendly help with Wi-Fi, smart devices, streaming, Ring, Nest, and home technology support in the Vancouver, WA area."
+  />
+  <style>
+    :root {
+      --blue: #2f5d8c;
+      --green: #6bbf59;
+      --light: #f4f6f8;
+      --text: #333333;
+      --muted: #667085;
+      --white: #ffffff;
+      --border: #d9e2ec;
+      --shadow: 0 10px 30px rgba(47, 93, 140, 0.12);
+      --radius: 18px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--light);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--blue), #4279b2);
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      font-size: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .brand-text span {
+      color: var(--green);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .nav a:hover,
+    .nav a:focus {
+      color: var(--blue);
+    }
+
+    .cta-button,
+    .secondary-button {
+      display: inline-block;
+      padding: 0.95rem 1.25rem;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .cta-button {
+      background: var(--blue);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .cta-button:hover,
+    .cta-button:focus {
+      transform: translateY(-1px);
+      background: #264f79;
+    }
+
+    .secondary-button {
+      background: var(--white);
+      color: var(--blue);
+      border: 1px solid var(--border);
+    }
+
+    .secondary-button:hover,
+    .secondary-button:focus {
+      transform: translateY(-1px);
+      border-color: var(--blue);
+    }
+
+    .hero {
+      padding: 4.5rem 0 3rem;
+      background:
+        radial-gradient(circle at top right, rgba(107, 191, 89, 0.15), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, #f4f6f8 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(107, 191, 89, 0.15);
+      color: #2f6e22;
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 4.4vw, 4rem);
+      line-height: 1.1;
+      margin: 0 0 1rem;
+      color: #1f3550;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 62ch;
+      margin: 0 0 1.5rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 1.6rem;
+      box-shadow: var(--shadow);
+    }
+
+    .mockup {
+      background: linear-gradient(180deg, #2f5d8c 0%, #4279b2 100%);
+      color: var(--white);
+      border-radius: 24px;
+      padding: 1.6rem;
+      min-height: 420px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mockup::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: -60px;
+      bottom: -60px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .mockup .badge {
+      display: inline-block;
+      padding: 0.45rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.18);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .mockup h2 {
+      margin: 0 0 0.6rem;
+      font-size: 1.7rem;
+    }
+
+    .mockup p {
+      margin: 0 0 1rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .mini-item {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      padding: 0.9rem 1rem;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 4.25rem 0;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 2rem;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      margin: 0 0 0.75rem;
+      color: #1f3550;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.65rem;
+      color: #1f3550;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+    }
+
+    .card ul {
+      padding-left: 1.1rem;
+      margin-bottom: 0;
+    }
+
+    .services-grid,
+    .plans-grid,
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .service-icon,
+    .step-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      margin-bottom: 0.9rem;
+    }
+
+    .service-icon {
+      background: rgba(47, 93, 140, 0.1);
+      color: var(--blue);
+    }
+
+    .step-number {
+      background: rgba(107, 191, 89, 0.15);
+      color: #2f6e22;
+    }
+
+    .plan {
+      position: relative;
+    }
+
+    .plan.featured {
+      border: 2px solid var(--blue);
+      transform: translateY(-4px);
+    }
+
+    .plan-badge {
+      position: absolute;
+      top: -12px;
+      right: 16px;
+      background: var(--blue);
+      color: var(--white);
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #1f3550;
+      margin: 0.5rem 0;
+    }
+
+    .price span {
+      font-size: 1rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .muted-box {
+      background: #edf5ec;
+      border: 1px solid #dbe9d7;
+      color: #355e2f;
+      padding: 1rem 1.1rem;
+      border-radius: 14px;
+      font-weight: 700;
+      margin-top: 1rem;
+    }
+
+    .family-section {
+      background: linear-gradient(180deg, #ffffff 0%, #f7fafc 100%);
+    }
+
+    .cta-band {
+      background: linear-gradient(135deg, var(--blue), #3b72a9);
+      color: var(--white);
+      border-radius: 28px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-band h2,
+    .cta-band p {
+      margin: 0;
+    }
+
+    .cta-band p {
+      color: rgba(255, 255, 255, 0.88);
+      margin-top: 0.5rem;
+      max-width: 55ch;
+    }
+
+    .footer {
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+
+    .contact-item {
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--white);
+      font-weight: 700;
+    }
+
+    .small-note {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .grid-3,
+      .services-grid,
+      .plans-grid,
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-inner {
+        align-items: flex-start;
+      }
+
+      .brand {
+        font-size: 1rem;
+      }
+
+      .hero-card,
+      .card,
+      .cta-band {
+        padding: 1.2rem;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .cta-button,
+      .secondary-button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#top" class="brand" aria-label="HomeTechCare home">
+        <div class="brand-mark">🏠</div>
+        <div class="brand-text">Home<span>Tech</span>Care</div>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="cta-button">Get Help</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Friendly home technology support</div>
+          <h1>Simple help for the technology in your home</h1>
+          <p>
+            HomeTechCare helps homeowners with Wi-Fi, smart devices, streaming,
+            Ring, Nest, and everyday tech problems. Clear answers, patient support,
+            and local help when you need it.
+          </p>
+          <div class="hero-buttons">
+            <a href="#contact" class="cta-button">Schedule a Free Tech Check</a>
+            <a href="#pricing" class="secondary-button">View Plans</a>
+          </div>
+          <div class="hero-points">
+            <span>✔ Patient support</span>
+            <span>✔ No confusing tech talk</span>
+            <span>✔ Serving Vancouver, WA</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="mockup">
+            <div class="badge">If it plugs in or connects to Wi-Fi, we can help.</div>
+            <h2>Support you can trust</h2>
+            <p>
+              Help with setup, troubleshooting, and understanding the devices in your home.
+            </p>
+            <div class="mini-list">
+              <div class="mini-item">Wi-Fi & mesh network setup</div>
+              <div class="mini-item">Ring, Nest & smart home devices</div>
+              <div class="mini-item">Streaming TV & app support</div>
+              <div class="mini-item">Phone, video, and local on-site help</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-heading">
+          <h2>What we help with</h2>
+          <p>
+            We focus on the everyday technology problems that frustrate homeowners and families most.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="card">
+            <div class="service-icon">📶</div>
+            <h3>Wi-Fi & Internet Help</h3>
+            <p>
+              Router setup, mesh Wi-Fi, dead spots, slow internet troubleshooting, and device connection issues.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">🔔</div>
+            <h3>Smart Devices</h3>
+            <p>
+              Ring, Nest, cameras, thermostats, doorbells, smart plugs, and app setup.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">📺</div>
+            <h3>TV & Streaming</h3>
+            <p>
+              Smart TVs, Roku, Fire TV, streaming apps, login help, and making everything easier to use.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">🔐</div>
+            <h3>Accounts & Passwords</h3>
+            <p>
+              Help with account setup, password resets, device sign-ins, and organizing access to your apps.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">👵</div>
+            <h3>Senior-Friendly Support</h3>
+            <p>
+              Calm, patient guidance without jargon. We make home technology less stressful and more usable.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">🛠️</div>
+            <h3>Ongoing Tech Care</h3>
+            <p>
+              Instead of figuring it out alone every time, you have someone to call when things stop working.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works">
+      <div class="container">
+        <div class="section-heading">
+          <h2>How it works</h2>
+          <p>
+            Simple, clear support without pressure or confusing technical language.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <article class="card">
+            <div class="step-number">1</div>
+            <h3>Tell us what’s going on</h3>
+            <p>
+              Call, email, or request a free 15-minute tech check and describe the problem.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="step-number">2</div>
+            <h3>Get a simple plan</h3>
+            <p>
+              We explain the issue in plain English and recommend the easiest next step.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="step-number">3</div>
+            <h3>Get help your way</h3>
+            <p>
+              We support you by phone, video call, or local on-site assistance when appropriate.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Simple pricing</h2>
+          <p>
+            Start with one-time help, or choose a monthly plan for ongoing support and peace of mind.
+          </p>
+        </div>
+
+        <div class="plans-grid">
+          <article class="card plan">
+            <h3>Basic Support</h3>
+            <p class="price">$29 <span>/ month</span></p>
+            <ul>
+              <li>Phone and video support</li>
+              <li>Help with Wi-Fi, apps, and devices</li>
+              <li>Simple troubleshooting and guidance</li>
+            </ul>
+          </article>
+
+          <article class="card plan featured">
+            <div class="plan-badge">Most Popular</div>
+            <h3>Standard Care</h3>
+            <p class="price">$59 <span>/ month</span></p>
+            <ul>
+              <li>Everything in Basic</li>
+              <li>Priority response</li>
+              <li>Smart device setup guidance</li>
+              <li>Annual virtual home tech check</li>
+            </ul>
+          </article>
+
+          <article class="card plan">
+            <h3>Premium Care</h3>
+            <p class="price">$99 <span>/ month</span></p>
+            <ul>
+              <li>Everything in Standard</li>
+              <li>Two local in-home visits per year</li>
+              <li>Discounted additional visits</li>
+              <li>Personalized device recommendations</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="muted-box">
+          One-time local service call: $95 — applied toward a monthly plan if you join.
+        </div>
+      </div>
+    </section>
+
+    <section class="family-section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Great for seniors. Reassuring for families.</h2>
+          <p>
+            HomeTechCare is designed for people who want a trusted, ongoing source of help with home technology.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Patient, calm support</h3>
+            <p>
+              We explain things clearly, move at your pace, and focus on making devices easier to use.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Peace of mind for adult children</h3>
+            <p>
+              If a parent or loved one struggles with technology, we can be the person they call for help.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Local and personal</h3>
+            <p>
+              Based around real support, not one-time transactions. The goal is to become your go-to home tech helper.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="cta-band">
+          <div>
+            <h2>Need help today?</h2>
+            <p>
+              Start with a free 15-minute tech check. We’ll listen, explain the issue clearly, and suggest the simplest next step.
+            </p>
+          </div>
+          <div>
+            <a href="mailto:hello@hometechcare.us" class="secondary-button">Email Us</a>
+            <a href="tel:+13605551234" class="cta-button" style="margin-left: 0.75rem;">Call (360) 555-1234</a>
+          </div>
+        </div>
+
+        <div class="contact-list" style="margin-top: 1.5rem;">
+          <div class="contact-item">Phone: (360) 555-1234</div>
+          <div class="contact-item">Email: hello@hometechcare.us</div>
+          <div class="contact-item">Service Area: Vancouver, WA and nearby communities</div>
+        </div>
+
+        <p class="small-note">
+          HomeTechCare provides technology setup assistance, education, and support. We do not perform licensed electrical work.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-top">
+      <div>
+        <strong>HomeTechCare.us</strong><br />
+        Simple help for your home technology
+      </div>
+      <div>
+        © <span id="year"></span> HomeTechCare. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
