@@ -319,8 +319,8 @@ section {
 }
 
 .service-icon {
-  background: rgba(47, 93, 140, 0.1);
-  color: var(--blue);
+  font-size: 2rem;
+  margin-bottom: 0.9rem;
 }
 
 .step-number {
