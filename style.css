@@ -326,7 +326,7 @@ section {
   color: #2f6e22;
 }
 
-.plan {
+.card.plan {
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 1.5rem;
