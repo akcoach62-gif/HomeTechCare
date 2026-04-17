@@ -111,13 +111,13 @@ img {
 .cta-button {
   background-color: #2563eb;
   color: #ffffff !important;
-  font-weight: 700;
 }
 
 .cta-button:hover,
 .cta-button:focus {
   transform: translateY(-1px);
   background: #264f79;
+  color: #ffffff !important;
 }
 
 .secondary-button {
@@ -300,16 +300,23 @@ section {
 }
 
 .services-grid,
-.plans-grid {
+.plans-grid,
+.steps-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
+.services-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.plans-grid {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: stretch;
+}
+
 .steps-grid {
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
 }
 
 .step-number {
@@ -320,27 +327,25 @@ section {
   place-items: center;
   font-weight: 800;
   margin-bottom: 0.9rem;
+  background: rgba(107, 191, 89, 0.15);
+  color: #2f6e22;
 }
 
 .service-icon {
   font-size: 2rem;
   margin-bottom: 0.9rem;
-}
-
-.step-number {
-  background: rgba(107, 191, 89, 0.15);
-  color: #2f6e22;
+  letter-spacing: 2px;
 }
 
 .card.plan {
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 1.5rem;
+  box-shadow: var(--shadow);
 }
 
-.plan.featured {
+.card.plan.featured {
   border: 2px solid #2563eb;
-  
 }
 
 .plan-badge {
