@@ -306,6 +306,12 @@ section {
   gap: 1.5rem;
 }
 
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
 .step-number {
   width: 44px;
   height: 44px;
