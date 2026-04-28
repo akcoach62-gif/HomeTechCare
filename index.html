@@ -264,6 +264,8 @@
         >
           <input type="hidden" name="_subject" value="New HomeTechCare website inquiry" />
           <input type="hidden" name="_next" value="https://hometechcare.us/thank-you.html" />
+          <input type="hidden" name="source" id="source">
+          <input type="hidden" name="landing_page" id="landing_page">
           <input
             type="hidden"
             name="_autoresponse"
@@ -271,6 +273,8 @@
           />
           <input type="hidden" name="_template" value="table" />
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="source" id="source">
+          <input type="hidden" name="landing_page" id="landing_page">
 
           <div class="form-grid">
             <div>
@@ -344,5 +348,28 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const currentSource = params.get("src");
+
+    if (currentSource) {
+      localStorage.setItem("hometechcare_source", currentSource);
+    }
+
+    const savedSource = localStorage.getItem("hometechcare_source");
+
+    const sourceField = document.getElementById("source");
+    const landingField = document.getElementById("landing_page");
+
+    if (sourceField && savedSource) {
+      sourceField.value = savedSource;
+    }
+
+    if (landingField) {
+      landingField.value = window.location.href;
+    }
+  })();
+</script>
 </body>
 </html>
