@@ -1,695 +1,464 @@
+# Updated `index.html` for HomeTechCare
+
+Replace your current `index.html` with the code below.
+
+> IMPORTANT:
+>
+> * Put your personal photo at: `images/jay-photo.jpg`
+> * Keep your existing CSS file connected if you already have one.
+> * Add the CSS section at the bottom into your stylesheet.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HomeTechCare | Simple, reliable help for the technology in your home</title>
-  <meta name="description" content="HomeTechCare provides simple, reliable help with computers, Wi-Fi, printers, TVs, phones, passwords, smart devices, and everyday home technology in the Tri-Cities area." />
+  <title>HomeTechCare | Simple, Reliable Help for the Technology in Your Home</title>
+
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    :root {
+      --blue: #1d4f91;
+      --orange: #f28c28;
+      --light: #f5f7fa;
+      --dark: #1c1c1c;
+      --border: #dfe7ef;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      background: #ffffff;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: var(--blue);
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .hero {
+      background: linear-gradient(to bottom right, #f5f7fa, #ffffff);
+      padding: 5rem 0;
+      text-align: center;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      max-width: 760px;
+      margin: 0 auto 2rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 1.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: #ffffff;
+    }
+
+    .btn-secondary {
+      background: var(--blue);
+      color: #ffffff;
+    }
+
+    .services-grid,
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .service-card,
+    .why-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    }
+
+    .service-card h3,
+    .why-card h3 {
+      color: var(--blue);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      margin: 0 auto 2rem;
+      text-align: center;
+      font-size: 1.05rem;
+    }
+
+    .pricing-box,
+    .loved-box {
+      max-width: 800px;
+      margin: 2rem auto 0;
+      background: var(--light);
+      border-left: 5px solid var(--blue);
+      padding: 1.5rem;
+      border-radius: 12px;
+    }
+
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 2rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .about-photo img {
+      width: 240px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+    }
+
+    .contact-box {
+      text-align: center;
+      background: var(--blue);
+      color: white;
+      border-radius: 16px;
+      padding: 3rem 2rem;
+    }
+
+    .contact-box h2 {
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #f1f1f1;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .services-grid,
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-wrap {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .about-photo img {
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .services-grid,
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
-
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a href="#top" class="brand" aria-label="HomeTechCare home">
-        <div class="brand-mark">🏠</div>
-        <div class="brand-text">Home<span>Tech</span>Care</div>
-      </a>
 
-      <nav class="nav" aria-label="Main navigation">
-        <a href="#services">Services</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#about">Families</a>
-        <a href="#contact" class="cta-button">Get Help</a>
-      </nav>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>
+        In-home help for Wi-Fi, printers, TVs, phones, smart devices, and everyday tech problems.
+      </h1>
+
+      <p class="hero-subtitle">
+        Simple, patient, one-on-one technology help in your home — no call centers, no confusing jargon, and no pressure to buy things you do not need.
+      </p>
+
+      <div class="cta-buttons">
+        <a href="tel:15094166379" class="btn btn-primary">Call or Text (509) 416-6379</a>
+        <a href="#contact" class="btn btn-secondary">Request Help</a>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Patient, in-home tech help</div>
-          <h1>Simple, reliable help for the technology in your home</h1>
-          <p>
-            Friendly, face-to-face help with computers, Wi-Fi, printers, TVs, passwords,
-            phones, smart devices, and everyday technology problems. Many customers also
-            call when a parent, relative, or friend needs patient, in-person support.
-          </p>
+  <!-- SERVICES -->
+  <section class="section services">
+    <div class="container">
+      <h2>Common Services</h2>
 
-          <div class="hero-buttons">
-            <a href="#contact" class="cta-button">Get Help</a>
-            <a href="#about" class="secondary-button">Family Support</a>
-          </div>
-
-          <div class="hero-points">
-            <span>✔ Patient support</span>
-            <span>✔ No confusing tech talk</span>
-            <span>✔ Serving Tri-Cities, Washington</span>
-          </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Wi-Fi & Internet Help</h3>
+          <p>Fix weak signals, reconnect devices, improve coverage, and simplify your home network.</p>
         </div>
 
-        <div class="hero-card">
-          <div class="mockup">
-            <div class="badge">If it plugs in or connects to Wi-Fi, we can help.</div>
-            <h2>Support you can trust</h2>
-            <p>Help with setup, troubleshooting, and understanding the devices in your home.</p>
+        <div class="service-card">
+          <h3>Printers & Computers</h3>
+          <p>Printer setup, troubleshooting, updates, laptop help, and general computer guidance.</p>
+        </div>
 
-            <div class="mini-list">
-              <div class="mini-item">Computers and Wi-Fi help</div>
-              <div class="mini-item">Printers, TVs, and streaming</div>
-              <div class="mini-item">Passwords, apps, and account help</div>
-              <div class="mini-item">Phone, text, email, and local on-site help</div>
-            </div>
-          </div>
+        <div class="service-card">
+          <h3>Smart TVs & Streaming</h3>
+          <p>Streaming apps, Roku, Fire TV, soundbars, remote setup, and TV connections.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>Phones & Smart Devices</h3>
+          <p>Smartphones, tablets, smart speakers, cameras, and everyday device setup.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="services">
-      <div class="container">
-        <div class="section-heading">
-          <h2>What we help with</h2>
-          <p>We focus on the everyday technology problems that frustrate homeowners and families most.</p>
+  <!-- WHY CHOOSE -->
+  <section class="section why-choose">
+    <div class="container">
+      <h2>Why Choose HomeTechCare?</h2>
+
+      <p class="section-intro">
+        HomeTechCare is built for people who want practical, in-home help — not a rushed counter visit or a call center script.
+      </p>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <h3>No hauling devices around</h3>
+          <p>I come to your home, so we can fix the problem where it actually happens.</p>
         </div>
 
-        <div class="services-grid">
-          <article class="card">
-            <div class="service-icon">💻</div>
-            <h3>Computers &amp; Wi-Fi</h3>
-            <p>Computer help, router setup, slow internet troubleshooting, dead spots, and device connection issues.</p>
-          </article>
+        <div class="why-card">
+          <h3>Patient, one-on-one help</h3>
+          <p>You get clear explanations at your pace, without jargon or pressure.</p>
+        </div>
 
-          <article class="card">
-            <div class="service-icon">🖨️</div>
-            <h3>Printers &amp; Devices</h3>
-            <p>Printer setup, device connections, settings, and help getting everyday equipment working again.</p>
-          </article>
+        <div class="why-card">
+          <h3>No call centers or upselling</h3>
+          <p>You work directly with a local person focused on solving the issue.</p>
+        </div>
 
-          <article class="card">
-            <div class="service-icon">📺</div>
-            <h3>TV &amp; Streaming</h3>
-            <p>Smart TVs, Roku, Fire TV, streaming apps, login help, remotes, and making everything easier to use.</p>
-          </article>
-
-          <article class="card">
-            <div class="service-icon">🔐</div>
-            <h3>Accounts &amp; Passwords</h3>
-            <p>Help with account setup, password resets, sign-ins, and organizing access to your apps and devices.</p>
-          </article>
-
-          <article class="card">
-            <div class="service-icon">👵👴</div>
-            <h3>Help for Parents &amp; Loved Ones</h3>
-            <p>Calm, patient support for a parent, relative, or friend who needs help with everyday technology.</p>
-          </article>
-
-          <article class="card">
-            <div class="service-icon">🛠️</div>
-            <h3>Ongoing Tech Care</h3>
-            <p>For people who want someone local to call when things stop working or become confusing.</p>
-          </article>
+        <div class="why-card">
+          <h3>Help with the whole setup</h3>
+          <p>Wi‑Fi, printers, phones, TVs, smart devices, passwords, and more — all connected together.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="how-it-works">
-      <div class="container">
-        <div class="section-heading">
-          <h2>How it works</h2>
-          <p>Simple, clear support without pressure or confusing technical language.</p>
-        </div>
+  <!-- PRICING -->
+  <section class="section pricing">
+    <div class="container">
+      <h2>Simple Pricing</h2>
 
-        <div class="steps-grid">
-          <article class="card">
-            <div class="step-number">1</div>
-            <h3>Reach out</h3>
-            <p>Call, text, or send a message and let us know what’s going on. No technical details needed.</p>
-          </article>
+      <div class="pricing-box">
+        <p><strong>$95 First Visit</strong></p>
 
-          <article class="card">
-            <div class="step-number">2</div>
-            <h3>Start with a simple conversation</h3>
-            <p>We ask a few questions, explain the easiest next step, and decide whether phone help, email, or an in-home visit makes sense.</p>
-          </article>
+        <p>
+          Includes evaluation, troubleshooting, recommendations, and help solving many common issues during the visit.
+        </p>
 
-          <article class="card">
-            <div class="step-number">3</div>
-            <h3>Get help your way</h3>
-            <p>We provide patient support by phone, text, email, video, or in person, depending on the problem and what feels most comfortable.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="pricing">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Simple pricing</h2>
-          <p>
-            Start with one-time help when you need it. Ongoing support is also available for customers who want a trusted local resource to call when technology problems come up.
-          </p>
-        </div>
-
-        <div class="plans-grid">
-          <article class="card plan featured">
-            <h3>One-Time Help</h3>
-            <p class="price">$95 <span>/ visit</span></p>
-            <ul>
-              <li>Friendly local support</li>
-              <li>Help by phone, text, email, video, or in person</li>
-              <li>Clear next steps and straightforward guidance</li>
-              <li>Most issues handled in one visit</li>
-            </ul>
-          </article>
-
-          <article class="card plan">
-            <h3>Ongoing Tech Care</h3>
-            <p class="price">Ask us <span>about options</span></p>
-            <ul>
-              <li>For customers who want ongoing help and peace of mind</li>
-              <li>A trusted local resource to call when things stop working</li>
-              <li>Support that fits your home and your needs</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="muted-box">
-          Some customers prefer one-time help. Others like knowing they always have someone to call. We can help either way.
-        </div>
-      </div>
-    </section>
-
-    <section class="family-section" id="about">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Help for parents and loved ones, too</h2>
-          <p>
-            Many customers first contact us for help in their own home, then later ask if we can also help a parent, relative, or friend who is having trouble with technology.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <h3>Everyday technology help</h3>
-            <p>Help with computers, Wi-Fi, printers, TVs, passwords, device settings, and other common technology problems at home.</p>
-          </article>
-
-          <article class="card">
-            <h3>Patient, in-person support</h3>
-            <p>Clear explanations, face-to-face help, and step-by-step guidance without confusion or technical jargon.</p>
-          </article>
-
-          <article class="card">
-            <h3>Reassurance for families</h3>
-            <p>A trusted local person to call when a parent or loved one needs help with everyday technology.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="cta-band">
-          <div>
-            <h2>Need help today?</h2>
-            <p>
-              Call or text for friendly, local help with everyday technology problems. No pressure—just simple, patient support.
-            </p>
-          </div>
-          <div>
-            <a href="tel:+15094166379" class="cta-button">Call or Text (509) 416-6379</a>
-          </div>
-        </div>
-
-        <form
-          class="contact-form"
-          action="https://formsubmit.co/hello@hometechcare.us"
-          method="POST"
-          style="margin-top: 1.5rem;"
-        >
-          <input type="hidden" name="_subject" value="🚨 NEW LEAD - HomeTechCare" />
-          <input type="hidden" name="_next" value="https://hometechcare.us/thank-you.html" />
-          <input type="hidden" name="_bcc" value="e8yh4n9vus@pomail.net" />
-          <input type="hidden" name="source" id="source" />
-          <input type="hidden" name="landing_page" id="landing_page" />
-
-          <input
-            type="hidden"
-            name="_autoresponse"
-            value="Thank you for contacting HomeTechCare. We received your request and will get back to you as soon as possible. If your issue is urgent, please call or text us directly."
-          />
-          <input type="hidden" name="_template" value="table" />
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
-
-          <div class="form-grid">
-            <div>
-              <label for="name"><strong>Your Name</strong></label>
-              <input id="name" name="name" type="text" required />
-            </div>
-
-            <div>
-              <label for="email"><strong>Your Email</strong></label>
-              <input id="email" name="email" type="email" required />
-            </div>
-
-            <div>
-              <label for="phone"><strong>Phone Number</strong></label>
-              <input id="phone" name="phone" type="tel" />
-            </div>
-
-            <div>
-              <label for="help-type"><strong>How can we help?</strong></label>
-              <select id="help-type" name="help_type">
-                <option value="">Please choose</option>
-                <option>Computer or Wi-Fi Help</option>
-                <option>Printer or Device Help</option>
-                <option>TV or Streaming Help</option>
-                <option>Help for a Parent or Loved One</option>
-                <option>General Question</option>
-              </select>
-            </div>
-
-            <div style="grid-column: 1 / -1;">
-              <label for="message"><strong>What do you need help with?</strong></label>
-              <textarea
-                id="message"
-                name="message"
-                rows="6"
-                required
-                placeholder="Please tell us what’s going on and how you’d like us to help."
-              ></textarea>
-            </div>
-          </div>
-
-          <div class="form-actions">
-            <button type="submit" class="cta-button form-button">Send Request</button>
-            <span class="small-note form-note">If you are not sure what the problem is, that is okay—we will figure it out together.</span>
-          </div>
-        </form>
-
-        <div class="contact-list">
-          <div class="contact-item">Phone: (509) 416-6379</div>
-          <div class="contact-item">Email: hello@hometechcare.us</div>
-          <div class="contact-item">Service Area: Tri-Cities, Washington and nearby communities</div>
-        </div>
-
-        <p class="small-note">
-          HomeTechCare provides technology setup assistance, education, and support. We do not perform licensed electrical work.
+        <p>
+          Ongoing support and follow-up services are available if additional work is needed.
         </p>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="footer">
-    <div class="container footer-top">
-      <div>
-        <strong>HomeTechCare.us</strong><br />
-        Simple, reliable help for the technology in your home
-      </div>
-      <div>
-        © <span id="year"></span> HomeTechCare. All rights reserved.
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <div class="container">
+      <h2>How It Works</h2>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>1. Contact HomeTechCare</h3>
+          <p>Call, text, or submit the form below to describe the issue.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>2. Schedule a Visit</h3>
+          <p>We coordinate a convenient time for an in-home visit.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>3. Get Clear Help</h3>
+          <p>Receive patient, understandable support without pressure or jargon.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>4. Follow-Up Support</h3>
+          <p>Additional recommendations and ongoing care are available if needed.</p>
+        </div>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const params = new URLSearchParams(window.location.search);
-      const currentSource = params.get("src");
+  <!-- LOVED ONES -->
+  <section class="section loved-ones">
+    <div class="container">
+      <h2>Help for Parents and Loved Ones</h2>
 
-      if (currentSource) {
-        localStorage.setItem("hometechcare_source", currentSource);
-      }
+      <p class="section-intro">
+        If a parent or family member is struggling with Wi‑Fi, phones, printers, passwords, streaming, or smart devices, HomeTechCare can provide patient in-home help and clear follow-up recommendations.
+      </p>
 
-      const savedSource = localStorage.getItem("hometechcare_source") || "direct";
-
-      const sourceField = document.getElementById("source");
-      const landingField = document.getElementById("landing_page");
-
-      if (sourceField) {
-        sourceField.value = savedSource;
-      }
-
-      if (landingField) {
-        landingField.value = window.location.href;
-      }
-
-      const year = document.getElementById("year");
-      if (year) {
-        year.textContent = new Date().getFullYear();
-      }
-    });
-  </script>
-
-  <script src="script.js"></script>
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HomeTechCare | Simple, reliable help for the technology in your home</title>
-  <meta name="description" content="HomeTechCare provides simple, reliable help with computers, Wi-Fi, printers, TVs, phones, passwords, smart devices, and everyday home technology in the Tri-Cities area." />
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a href="#top" class="brand" aria-label="HomeTechCare home">
-        <div class="brand-mark">🏠</div>
-        <div class="brand-text">Home<span>Tech</span>Care</div>
-      </a>
-
-      <nav class="nav" aria-label="Main navigation">
-        <a href="#services">Services</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#about">Families</a>
-        <a href="#contact" class="cta-button">Get Help</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Patient, in-home tech help</div>
-          <h1>Simple, reliable help for the technology in your home</h1>
-          <p>
-            Friendly, face-to-face help with computers, Wi-Fi, printers, TVs, passwords,
-            phones, smart devices, and everyday technology problems. Many customers also
-            call when a parent, relative, or friend needs patient, in-person support.
-          </p>
-
-          <div class="hero-buttons">
-            <a href="#contact" class="cta-button">Get Help</a>
-            <a href="#about" class="secondary-button">Family Support</a>
-          </div>
-
-          <div class="hero-points">
-            <span>✔ Patient support</span>
-            <span>✔ No confusing tech talk</span>
-            <span>✔ Serving Tri-Cities, Washington</span>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <div class="mockup">
-            <div class="badge">If it plugs in or connects to Wi-Fi, we can help.</div>
-            <h2>Support you can trust</h2>
-            <p>Help with setup, troubleshooting, and understanding the devices in your home.</p>
-
-            <div class="mini-list">
-              <div class="mini-item">Computers and Wi-Fi help</div>
-              <div class="mini-item">Printers, TVs, and streaming</div>
-              <div class="mini-item">Passwords, apps, and account help</div>
-              <div class="mini-item">Phone, text, email, and local on-site help</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="services">
-      <div class="container">
-        <div class="section-heading">
-          <h2>What we help with</h2>
-          <p>We focus on the everyday technology problems that frustrate homeowners and families most.</p>
-        </div>
-
-        <div class="services-grid">
-          <article class="card">
-            <div class="service-icon">💻</div>
-            <h3>Computers &amp; Wi-Fi</h3>
-            <p>Computer help, router setup, slow internet troubleshooting, dead spots, and device connection issues.</p>
-          </article>
-
-          <article class="card">
-            <div class="service-icon">🖨️</div>
-            <h3>Printers &amp; Devices</h3>
-            <p>Printer setup, device connections, settings, and help getting everyday equipment working again.</p>
-          </article>
-
-          <article class="card">
-            <div class="service-icon">📺</div>
-            <h3>TV &amp; Streaming</h3>
-            <p>Smart TVs, Roku, Fire TV, streaming apps, login help, remotes, and making everything easier to use.</p>
-          </article>
-
-          <article class="card">
-            <div class="service-icon">🔐</div>
-            <h3>Accounts &amp; Passwords</h3>
-            <p>Help with account setup, password resets, sign-ins, and organizing access to your apps and devices.</p>
-          </article>
-
-          <article class="card">
-            <div class="service-icon">👵👴</div>
-            <h3>Help for Parents &amp; Loved Ones</h3>
-            <p>Calm, patient support for a parent, relative, or friend who needs help with everyday technology.</p>
-          </article>
-
-          <article class="card">
-            <div class="service-icon">🛠️</div>
-            <h3>Ongoing Tech Care</h3>
-            <p>For people who want someone local to call when things stop working or become confusing.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="how-it-works">
-      <div class="container">
-        <div class="section-heading">
-          <h2>How it works</h2>
-          <p>Simple, clear support without pressure or confusing technical language.</p>
-        </div>
-
-        <div class="steps-grid">
-          <article class="card">
-            <div class="step-number">1</div>
-            <h3>Reach out</h3>
-            <p>Call, text, or send a message and let us know what’s going on. No technical details needed.</p>
-          </article>
-
-          <article class="card">
-            <div class="step-number">2</div>
-            <h3>Start with a simple conversation</h3>
-            <p>We ask a few questions, explain the easiest next step, and decide whether phone help, email, or an in-home visit makes sense.</p>
-          </article>
-
-          <article class="card">
-            <div class="step-number">3</div>
-            <h3>Get help your way</h3>
-            <p>We provide patient support by phone, text, email, video, or in person, depending on the problem and what feels most comfortable.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="pricing">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Simple pricing</h2>
-          <p>
-            Start with one-time help when you need it. Ongoing support is also available for customers who want a trusted local resource to call when technology problems come up.
-          </p>
-        </div>
-
-        <div class="plans-grid">
-          <article class="card plan featured">
-            <h3>One-Time Help</h3>
-            <p class="price">$95 <span>/ visit</span></p>
-            <ul>
-              <li>Friendly local support</li>
-              <li>Help by phone, text, email, video, or in person</li>
-              <li>Clear next steps and straightforward guidance</li>
-              <li>Most issues handled in one visit</li>
-            </ul>
-          </article>
-
-          <article class="card plan">
-            <h3>Ongoing Tech Care</h3>
-            <p class="price">Ask us <span>about options</span></p>
-            <ul>
-              <li>For customers who want ongoing help and peace of mind</li>
-              <li>A trusted local resource to call when things stop working</li>
-              <li>Support that fits your home and your needs</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="muted-box">
-          Some customers prefer one-time help. Others like knowing they always have someone to call. We can help either way.
-        </div>
-      </div>
-    </section>
-
-    <section class="family-section" id="about">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Help for parents and loved ones, too</h2>
-          <p>
-            Many customers first contact us for help in their own home, then later ask if we can also help a parent, relative, or friend who is having trouble with technology.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <h3>Everyday technology help</h3>
-            <p>Help with computers, Wi-Fi, printers, TVs, passwords, device settings, and other common technology problems at home.</p>
-          </article>
-
-          <article class="card">
-            <h3>Patient, in-person support</h3>
-            <p>Clear explanations, face-to-face help, and step-by-step guidance without confusion or technical jargon.</p>
-          </article>
-
-          <article class="card">
-            <h3>Reassurance for families</h3>
-            <p>A trusted local person to call when a parent or loved one needs help with everyday technology.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="cta-band">
-          <div>
-            <h2>Need help today?</h2>
-            <p>
-              Call or text for friendly, local help with everyday technology problems. No pressure—just simple, patient support.
-            </p>
-          </div>
-          <div>
-            <a href="tel:+15094166379" class="cta-button">Call or Text (509) 416-6379</a>
-          </div>
-        </div>
-
-        <form
-          class="contact-form"
-          action="https://formsubmit.co/hello@hometechcare.us"
-          method="POST"
-          style="margin-top: 1.5rem;"
-        >
-          <input type="hidden" name="_subject" value="🚨 NEW LEAD - HomeTechCare" />
-          <input type="hidden" name="_next" value="https://hometechcare.us/thank-you.html" />
-          <input type="hidden" name="_bcc" value="e8yh4n9vus@pomail.net" />
-          <input type="hidden" name="source" id="source" />
-          <input type="hidden" name="landing_page" id="landing_page" />
-
-          <input
-            type="hidden"
-            name="_autoresponse"
-            value="Thank you for contacting HomeTechCare. We received your request and will get back to you as soon as possible. If your issue is urgent, please call or text us directly."
-          />
-          <input type="hidden" name="_template" value="table" />
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
-
-          <div class="form-grid">
-            <div>
-              <label for="name"><strong>Your Name</strong></label>
-              <input id="name" name="name" type="text" required />
-            </div>
-
-            <div>
-              <label for="email"><strong>Your Email</strong></label>
-              <input id="email" name="email" type="email" required />
-            </div>
-
-            <div>
-              <label for="phone"><strong>Phone Number</strong></label>
-              <input id="phone" name="phone" type="tel" />
-            </div>
-
-            <div>
-              <label for="help-type"><strong>How can we help?</strong></label>
-              <select id="help-type" name="help_type">
-                <option value="">Please choose</option>
-                <option>Computer or Wi-Fi Help</option>
-                <option>Printer or Device Help</option>
-                <option>TV or Streaming Help</option>
-                <option>Help for a Parent or Loved One</option>
-                <option>General Question</option>
-              </select>
-            </div>
-
-            <div style="grid-column: 1 / -1;">
-              <label for="message"><strong>What do you need help with?</strong></label>
-              <textarea
-                id="message"
-                name="message"
-                rows="6"
-                required
-                placeholder="Please tell us what’s going on and how you’d like us to help."
-              ></textarea>
-            </div>
-          </div>
-
-          <div class="form-actions">
-            <button type="submit" class="cta-button form-button">Send Request</button>
-            <span class="small-note form-note">If you are not sure what the problem is, that is okay—we will figure it out together.</span>
-          </div>
-        </form>
-
-        <div class="contact-list">
-          <div class="contact-item">Phone: (509) 416-6379</div>
-          <div class="contact-item">Email: hello@hometechcare.us</div>
-          <div class="contact-item">Service Area: Tri-Cities, Washington and nearby communities</div>
-        </div>
-
-        <p class="small-note">
-          HomeTechCare provides technology setup assistance, education, and support. We do not perform licensed electrical work.
+      <div class="loved-box">
+        <p>
+          This is especially helpful for adult children who want someone trustworthy and patient to assist a parent or loved one with everyday technology problems.
         </p>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="footer">
-    <div class="container footer-top">
-      <div>
-        <strong>HomeTechCare.us</strong><br />
-        Simple, reliable help for the technology in your home
-      </div>
-      <div>
-        © <span id="year"></span> HomeTechCare. All rights reserved.
+  <!-- ABOUT -->
+  <section class="section about-trust">
+    <div class="container">
+      <h2>Local Help from Someone You Can Trust</h2>
+
+      <div class="about-wrap">
+        <div class="about-photo">
+          <img src="images/jay-photo.jpg" alt="Jay White, HomeTechCare" />
+        </div>
+
+        <div class="about-text">
+          <p>
+            HomeTechCare is operated by Jay White, a longtime technology and engineering professional with decades of hands-on experience helping people solve technical problems clearly and calmly.
+          </p>
+
+          <p>
+            The goal is simple: make the technology in your home easier to use, easier to understand, and less frustrating.
+          </p>
+
+          <p>
+            From Wi‑Fi and printers to TVs, streaming devices, passwords, and smart home technology, HomeTechCare focuses on practical help for real-world everyday problems.
+          </p>
+        </div>
       </div>
     </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <h2>Request Help</h2>
+
+        <p>
+          Call or text anytime, or send a request below.
+        </p>
+
+        <p>
+          <strong>(509) 416‑6379</strong><br>
+          hello@hometechcare.us
+        </p>
+
+        <form
+          action="https://formsubmit.co/hello@hometechcare.us"
+          method="POST"
+          style="max-width: 700px; margin: 2rem auto 0; text-align: left;"
+        >
+
+          <input type="hidden" name="_subject" value="New HomeTechCare Request">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+
+          <div style="margin-bottom: 1rem;">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              required
+              style="width:100%; padding:1rem; border:none; border-radius:8px;"
+            >
+          </div>
+
+          <div style="margin-bottom: 1rem;">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              required
+              style="width:100%; padding:1rem; border:none; border-radius:8px;"
+            >
+          </div>
+
+          <div style="margin-bottom: 1rem;">
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Describe the tech problem or help needed"
+              required
+              style="width:100%; padding:1rem; border:none; border-radius:8px;"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary"
+            style="border:none; cursor:pointer;"
+          >
+            Send Request
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 HomeTechCare | Simple, reliable help for the technology in your home.
   </footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const params = new URLSearchParams(window.location.search);
-      const currentSource = params.get("src");
-
-      if (currentSource) {
-        localStorage.setItem("hometechcare_source", currentSource);
-      }
-
-      const savedSource = localStorage.getItem("hometechcare_source") || "direct";
-
-      const sourceField = document.getElementById("source");
-      const landingField = document.getElementById("landing_page");
-
-      if (sourceField) {
-        sourceField.value = savedSource;
-      }
-
-      if (landingField) {
-        landingField.value = window.location.href;
-      }
-
-      const year = document.getElementById("year");
-      if (year) {
-        year.textContent = new Date().getFullYear();
-      }
-    });
-  </script>
-
-  <script src="script.js"></script>
 </body>
 </html>
+```
