@@ -1,1 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tell Me What You Need Help With | HomeTechCare</title>
+  <meta name="description" content="Start a HomeTechCare tech help request for Wi-Fi, printers, computers, phones, streaming, passwords, smart devices, or help for a parent or loved one." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="HomeTechCare home">
+        <img src="HomeTechCare.png.png" alt="HomeTechCare logo" class="logo" />
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="help-request.html" class="nav-cta">Get Help</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section hero small-hero">
+      <div class="container">
+        <p class="eyebrow">Start here</p>
+        <h1>Tell me what you need help with.</h1>
+        <p class="hero-text">
+          No technical wording needed. Just describe what is happening in your own words, and I’ll help you figure out the next step.
+        </p>
+        <p class="hero-note">
+          Most requests begin with a quick phone call so I can understand the issue and recommend the best path forward.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container form-container">
+        <form class="help-form" action="https://formsubmit.co/akcoach62@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New HomeTechCare Tech Help Request" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="source" value="website-help-request" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <!-- Optional: after you create a thank-you.html page, remove the comment below and use your live domain. -->
+          <!-- <input type="hidden" name="_next" value="https://hometechcare.us/thank-you.html" /> -->
+
+          <div class="form-intro-card">
+            <h2>Tech Help Request</h2>
+            <p>
+              Fill out what you know and skip anything you don’t. Please do not include passwords, payment information, or private account numbers in this form.
+            </p>
+          </div>
+
+          <fieldset>
+            <legend>1. Contact information</legend>
+
+            <label for="name">Your name <span class="required">*</span></label>
+            <input id="name" name="Name" type="text" required />
+
+            <label for="phone">Phone number <span class="required">*</span></label>
+            <input id="phone" name="Phone" type="tel" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="Email" type="email" />
+
+            <label for="contact-method">Preferred contact method</label>
+            <select id="contact-method" name="Preferred contact method">
+              <option value="Phone call">Phone call</option>
+              <option value="Text message">Text message</option>
+              <option value="Email">Email</option>
+              <option value="No preference">No preference</option>
+            </select>
+
+            <label for="best-time">Best time to contact you</label>
+            <input id="best-time" name="Best time to contact" type="text" placeholder="Example: weekday mornings, after 4 PM, anytime" />
+
+            <label for="location">City or general location</label>
+            <input id="location" name="City or general location" type="text" placeholder="Example: Kennewick, Pasco, Richland" />
+
+            <label for="who-for">Is this help for you or someone else?</label>
+            <select id="who-for" name="Help is for">
+              <option value="Me">Me</option>
+              <option value="A parent or loved one">A parent or loved one</option>
+              <option value="My household/family">My household/family</option>
+              <option value="Other">Other</option>
+            </select>
+          </fieldset>
+
+          <fieldset>
+            <legend>2. What do you need help with?</legend>
+            <p class="form-help">Check all that apply. “Not sure” is perfectly fine.</p>
+
+            <div class="checkbox-grid">
+              <label><input type="checkbox" name="Help needed" value="Wi-Fi or internet problems" /> Wi-Fi or internet problems</label>
+              <label><input type="checkbox" name="Help needed" value="Printer setup or printer not working" /> Printer setup or printer not working</label>
+              <label><input type="checkbox" name="Help needed" value="Computer running slow" /> Computer running slow</label>
+              <label><input type="checkbox" name="Help needed" value="Phone or tablet help" /> Phone or tablet help</label>
+              <label><input type="checkbox" name="Help needed" value="Email help" /> Email help</label>
+              <label><input type="checkbox" name="Help needed" value="Password or login help" /> Password or login help</label>
+              <label><input type="checkbox" name="Help needed" value="TV or streaming help" /> TV, streaming, Roku, Fire TV, Apple TV, etc.</label>
+              <label><input type="checkbox" name="Help needed" value="Smart home device setup" /> Smart home device setup</label>
+              <label><input type="checkbox" name="Help needed" value="New device setup" /> New computer, phone, printer, or router setup</label>
+              <label><input type="checkbox" name="Help needed" value="Move data to a new device" /> Move data from old device to new device</label>
+              <label><input type="checkbox" name="Help needed" value="Video calls" /> Zoom, FaceTime, or video calls</label>
+              <label><input type="checkbox" name="Help needed" value="Photos or cloud storage" /> Photos, iCloud, Google Photos, OneDrive</label>
+              <label><input type="checkbox" name="Help needed" value="Security concern" /> Scam emails, pop-ups, suspicious messages</label>
+              <label><input type="checkbox" name="Help needed" value="Backup help" /> Backup help</label>
+              <label><input type="checkbox" name="Help needed" value="App or software help" /> App or software help</label>
+              <label><input type="checkbox" name="Help needed" value="Help for a parent or loved one" /> Help for a parent or loved one</label>
+              <label><input type="checkbox" name="Help needed" value="Not sure" /> Not sure — I need help figuring it out</label>
+              <label><input type="checkbox" name="Help needed" value="Other" /> Other</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>3. Tell me what’s happening</legend>
+            <label for="problem-description">Describe the issue in your own words <span class="required">*</span></label>
+            <textarea id="problem-description" name="Problem description" rows="7" required placeholder="What are you trying to do? What is not working? What have you already tried?"></textarea>
+          </fieldset>
+
+          <fieldset>
+            <legend>4. Devices involved</legend>
+            <p class="form-help">Check what is involved. Skip anything you don’t know.</p>
+
+            <div class="checkbox-grid">
+              <label><input type="checkbox" name="Devices involved" value="Desktop computer" /> Desktop computer</label>
+              <label><input type="checkbox" name="Devices involved" value="Laptop" /> Laptop</label>
+              <label><input type="checkbox" name="Devices involved" value="iPhone" /> iPhone</label>
+              <label><input type="checkbox" name="Devices involved" value="Android phone" /> Android phone</label>
+              <label><input type="checkbox" name="Devices involved" value="iPad or tablet" /> iPad or tablet</label>
+              <label><input type="checkbox" name="Devices involved" value="Printer" /> Printer</label>
+              <label><input type="checkbox" name="Devices involved" value="Router or Wi-Fi equipment" /> Router or Wi-Fi equipment</label>
+              <label><input type="checkbox" name="Devices involved" value="Smart TV" /> Smart TV</label>
+              <label><input type="checkbox" name="Devices involved" value="Streaming device" /> Streaming device</label>
+              <label><input type="checkbox" name="Devices involved" value="Smart speaker" /> Smart speaker</label>
+              <label><input type="checkbox" name="Devices involved" value="Security camera" /> Security camera</label>
+              <label><input type="checkbox" name="Devices involved" value="Other" /> Other</label>
+            </div>
+
+            <label for="device-details">Device brand/model, if known</label>
+            <input id="device-details" name="Device brand/model" type="text" placeholder="Example: iPhone 13, HP printer, Dell laptop, Samsung TV" />
+
+            <label for="device-age">Approximate age of device, if known</label>
+            <input id="device-age" name="Approximate device age" type="text" placeholder="Example: new, 2 years old, not sure" />
+
+            <label for="os-version">Operating system/version, if known</label>
+            <input id="os-version" name="Operating system/version" type="text" placeholder="Example: Windows 11, macOS, iOS, Android, not sure" />
+          </fieldset>
+
+          <fieldset>
+            <legend>5. Internet and Wi‑Fi details</legend>
+
+            <label for="internet-provider">Who is your internet provider?</label>
+            <select id="internet-provider" name="Internet provider">
+              <option value="Not sure">Not sure</option>
+              <option value="Spectrum">Spectrum</option>
+              <option value="Ziply Fiber">Ziply Fiber</option>
+              <option value="T-Mobile Home Internet">T-Mobile Home Internet</option>
+              <option value="Verizon Home Internet">Verizon Home Internet</option>
+              <option value="CenturyLink / Lumen">CenturyLink / Lumen</option>
+              <option value="Xfinity">Xfinity</option>
+              <option value="Other">Other</option>
+            </select>
+
+            <label for="internet-scope">Is the problem happening on one device or everything?</label>
+            <select id="internet-scope" name="Internet problem scope">
+              <option value="Not sure">Not sure</option>
+              <option value="One device">One device</option>
+              <option value="Several devices">Several devices</option>
+              <option value="Everything in the home">Everything in the home</option>
+              <option value="Not an internet problem">Not an internet problem</option>
+            </select>
+
+            <label for="router-location">Where is the router/modem located?</label>
+            <input id="router-location" name="Router/modem location" type="text" placeholder="Example: office, living room, closet, garage, not sure" />
+
+            <label for="wifi-password">Do you know your Wi‑Fi name/password?</label>
+            <select id="wifi-password" name="Knows Wi-Fi name/password">
+              <option value="Not sure">Not sure</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+            <p class="form-help">Please do not type your Wi‑Fi password here. Just have it available if we need it later.</p>
+          </fieldset>
+
+          <fieldset>
+            <legend>6. Urgency and next step</legend>
+
+            <label for="urgency">How urgent is this?</label>
+            <select id="urgency" name="Urgency">
+              <option value="Not urgent">Not urgent</option>
+              <option value="Within the next few days">Within the next few days</option>
+              <option value="As soon as possible">As soon as possible</option>
+              <option value="Emergency / no internet / cannot work or communicate">Emergency / no internet / cannot work or communicate</option>
+            </select>
+
+            <label for="visit-type">What would you prefer?</label>
+            <select id="visit-type" name="Preferred next step">
+              <option value="Phone consultation first">Phone consultation first</option>
+              <option value="In-home visit">In-home visit</option>
+              <option value="Text or email first">Text or email first</option>
+              <option value="Not sure">Not sure</option>
+            </select>
+
+            <label for="extra-notes">Anything else I should know?</label>
+            <textarea id="extra-notes" name="Additional notes" rows="5" placeholder="Example: gate code, parking instructions, helping a parent remotely, best way to reach you, photos you can text later, etc."></textarea>
+          </fieldset>
+
+          <button class="btn primary-btn form-submit" type="submit">Send Tech Help Request</button>
+
+          <p class="privacy-note">
+            By submitting this form, you are asking HomeTechCare to contact you about your request. Please do not include passwords, payment information, or private account numbers.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; HomeTechCare. Simple, reliable help for the technology in your home.</p>
+    </div>
+  </footer>
+</body>
+</html>
 
