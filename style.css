@@ -561,3 +561,118 @@ section {
 
   us
 }
+/* Help Request Page additions */
+.small-hero {
+  padding-top: 70px;
+  padding-bottom: 45px;
+}
+
+.hero-note {
+  margin-top: 18px;
+  font-weight: 600;
+}
+
+.form-container {
+  max-width: 900px;
+}
+
+.help-form {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.form-intro-card {
+  background: #f5f8fb;
+  border-left: 5px solid #1d5f8c;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 26px;
+}
+
+.help-form fieldset {
+  border: 1px solid #d9e2ea;
+  border-radius: 14px;
+  padding: 20px;
+  margin: 0 0 24px;
+}
+
+.help-form legend {
+  font-weight: 700;
+  padding: 0 8px;
+}
+
+.help-form label {
+  display: block;
+  font-weight: 600;
+  margin: 14px 0 6px;
+}
+
+.help-form input[type="text"],
+.help-form input[type="tel"],
+.help-form input[type="email"],
+.help-form select,
+.help-form textarea {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #bfcbd6;
+  border-radius: 9px;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.help-form textarea {
+  resize: vertical;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 18px;
+  margin-top: 10px;
+}
+
+.checkbox-grid label {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.checkbox-grid input {
+  margin-top: 3px;
+}
+
+.form-help,
+.privacy-note {
+  color: #5d6873;
+  font-size: 0.95rem;
+}
+
+.required {
+  color: #b00020;
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: 8px;
+  font-size: 1.05rem;
+}
+
+.nav-cta {
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .help-form {
+    padding: 18px;
+  }
+
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
