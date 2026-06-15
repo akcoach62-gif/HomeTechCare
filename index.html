@@ -3,199 +3,310 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>HomeTechCare | In-Home Tech Help</title>
-  <meta name="description" content="Simple, patient, in-home help for Wi-Fi, printers, TVs, phones, smart devices, passwords, and everyday technology problems." />
-
+  <title>HomeTechCare.us | Simple help for your home technology</title>
+  <meta name="description" content="Patient, in-home technology help for Wi-Fi, printers, TVs, phones, passwords, smart devices, and everyday tech problems." />
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-  <header class="hero">
-    <div class="container">
-      <h1>In-home help for Wi-Fi, printers, TVs, phones, smart devices, and everyday tech problems.</h1>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top" aria-label="HomeTechCare home">
+        <img class="brand-logo" src="HomeTechCare.png.png" alt="HomeTechCare logo" />
+      </a>
 
-      <p class="hero-subtitle">
-        Simple, patient, one-on-one technology help in your home — no call centers, no confusing jargon, and no pressure to buy things you do not need.
-      </p>
-
-      <div class="cta-buttons">
-        <a href="#request-help" class="btn btn-primary">Request Help</a>
-        <a href="tel:15094166379" class="btn btn-secondary">Call or Text</a>
-      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#why-choose">Why Choose Us</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#contact">Get Help</a>
+      </nav>
     </div>
   </header>
 
-  <main>
+  <main id="top">
 
-    <section class="section services">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Patient, in-home tech help</span>
+          <h1>In-home help for Wi-Fi, printers, TVs, phones, smart devices, and everyday tech problems.</h1>
+          <p>
+            Simple, patient, one-on-one technology help in your home — no call centers, no confusing jargon, and no pressure to buy things you do not need.
+          </p>
+
+          <div class="hero-buttons">
+            <a class="cta-button" href="#contact">Request Help</a>
+            <a class="secondary-button" href="tel:15094166379">Call or Text (509) 416-6379</a>
+          </div>
+
+          <div class="hero-points">
+            <span>✔ Patient support</span>
+            <span>✔ No confusing tech talk</span>
+            <span>✔ Serving Tri-Cities, Washington</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="mockup">
+            <span class="badge">HomeTechCare</span>
+            <h2>If it plugs in or connects to Wi-Fi, I can help.</h2>
+            <p>Support you can trust for the everyday technology problems that happen at home.</p>
+            <div class="mini-list">
+              <div class="mini-item">Wi-Fi & internet issues</div>
+              <div class="mini-item">Printers, computers & phones</div>
+              <div class="mini-item">TVs, streaming & remotes</div>
+              <div class="mini-item">Passwords, accounts & smart devices</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
       <div class="container">
-        <h2>Common Services</h2>
-
-        <p class="section-intro">
-          Practical help for the everyday technology problems that happen at home.
-        </p>
+        <div class="section-heading">
+          <h2>What we help with</h2>
+          <p>Practical help for the everyday technology problems that frustrate homeowners and families most.</p>
+        </div>
 
         <div class="services-grid">
-          <div class="service-card">
-            <h3>Wi-Fi & Internet</h3>
-            <p>Weak signal, dropped connections, modem/router help, and device connection problems.</p>
-          </div>
+          <article class="card">
+            <div class="service-icon">Wi</div>
+            <h3>Wi-Fi & Internet Help</h3>
+            <p>Router setup, mesh Wi-Fi, dead spots, slow internet troubleshooting, and device connection issues.</p>
+          </article>
 
-          <div class="service-card">
+          <article class="card">
+            <div class="service-icon">PC</div>
             <h3>Printers & Computers</h3>
             <p>Printer setup, slow computers, basic troubleshooting, updates, and general help.</p>
-          </div>
+          </article>
 
-          <div class="service-card">
-            <h3>TVs & Streaming</h3>
-            <p>Smart TVs, Roku, Fire TV, remotes, streaming apps, and audio/video connections.</p>
-          </div>
+          <article class="card">
+            <div class="service-icon">TV</div>
+            <h3>TV & Streaming</h3>
+            <p>Smart TVs, Roku, Fire TV, streaming apps, login help, remotes, and making everything easier to use.</p>
+          </article>
 
-          <div class="service-card">
+          <article class="card">
+            <div class="service-icon">PH</div>
             <h3>Phones & Smart Devices</h3>
             <p>Phones, tablets, smart home devices, passwords, photos, backup, and account access help.</p>
-          </div>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">🔐</div>
+            <h3>Accounts & Passwords</h3>
+            <p>Help with account setup, password resets, device sign-ins, and organizing access to your apps.</p>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">❤️</div>
+            <h3>Help for Parents & Loved Ones</h3>
+            <p>Patient support for family members who need calm, clear help with everyday technology.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section why-choose">
+    <section id="why-choose" class="why-choose">
       <div class="container">
-        <h2>Why Choose HomeTechCare?</h2>
-
-        <p class="section-intro">
-          HomeTechCare is built for people who want practical, in-home help — not a rushed counter visit or a call center script.
-        </p>
+        <div class="section-heading">
+          <h2>Why Choose HomeTechCare?</h2>
+          <p>HomeTechCare is built for people who want practical, in-home help — not a rushed counter visit or a call center script.</p>
+        </div>
 
         <div class="why-grid">
-          <div class="why-card">
+          <article class="card why-card">
             <h3>No hauling devices around</h3>
             <p>I come to your home, so we can fix the problem where it actually happens.</p>
-          </div>
+          </article>
 
-          <div class="why-card">
+          <article class="card why-card">
             <h3>Patient, one-on-one help</h3>
             <p>You get clear explanations at your pace, without jargon or pressure.</p>
-          </div>
+          </article>
 
-          <div class="why-card">
+          <article class="card why-card">
             <h3>No call centers or upselling</h3>
             <p>You work directly with a local person focused on solving the issue.</p>
-          </div>
+          </article>
 
-          <div class="why-card">
+          <article class="card why-card">
             <h3>Help with the whole setup</h3>
             <p>Wi-Fi, printers, phones, TVs, smart devices, passwords, and more — all connected together.</p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section pricing">
+    <section id="how-it-works">
       <div class="container">
-        <h2>Simple First Visit</h2>
+        <div class="section-heading">
+          <h2>How it works</h2>
+          <p>Simple, clear support without pressure or confusing technical language.</p>
+        </div>
 
-        <div class="pricing-box">
-          <h3>$95 First Visit Diagnostic</h3>
-          <p>
-            Includes up to 60 minutes of in-home help for one primary issue, quick checks, practical recommendations, and clear next steps.
-          </p>
-          <p>
-            Additional work, larger projects, setup help, or ongoing support can be quoted after the first visit.
-          </p>
+        <div class="steps-grid">
+          <article class="card">
+            <div class="step-number">1</div>
+            <h3>Tell me what’s going on</h3>
+            <p>Call, text, email, or send the form below and describe the problem in your own words.</p>
+          </article>
+
+          <article class="card">
+            <div class="step-number">2</div>
+            <h3>Get a simple plan</h3>
+            <p>I explain the issue in plain English and recommend the easiest next step.</p>
+          </article>
+
+          <article class="card">
+            <div class="step-number">3</div>
+            <h3>Get help your way</h3>
+            <p>Support can begin with a phone consultation and continue with local in-home help when appropriate.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section loved-ones">
+    <section id="pricing">
       <div class="container">
-        <h2>Help for Parents and Loved Ones</h2>
+        <div class="section-heading">
+          <h2>Simple pricing</h2>
+          <p>Start with a first visit, then choose only the follow-up support you actually need.</p>
+        </div>
 
-        <p class="section-intro">
-          If a parent or family member is struggling with Wi-Fi, phones, printers, passwords, streaming, or smart devices, HomeTechCare can provide patient in-home help and clear follow-up recommendations.
-        </p>
+        <div class="plans-grid">
+          <article class="card plan featured">
+            <span class="plan-badge">Start Here</span>
+            <h3>First Visit Diagnostic</h3>
+            <p class="price">$95 <span>/ up to 60 minutes</span></p>
+            <ul>
+              <li>One primary issue</li>
+              <li>Quick checks and practical recommendations</li>
+              <li>Clear next steps if more work is needed</li>
+            </ul>
+          </article>
 
-        <div class="loved-box">
-          <p>
-            This is especially helpful for adult children who want someone trustworthy and patient to assist a parent or loved one with everyday technology problems.
-          </p>
+          <article class="card plan">
+            <h3>Follow-Up Help</h3>
+            <p class="price">Quoted <span>/ as needed</span></p>
+            <ul>
+              <li>Additional troubleshooting</li>
+              <li>Setup projects</li>
+              <li>Device and network improvements</li>
+            </ul>
+          </article>
+
+          <article class="card plan">
+            <h3>Ongoing Tech Care</h3>
+            <p class="price">Custom <span>/ prepaid support</span></p>
+            <ul>
+              <li>For households needing regular help</li>
+              <li>Prepaid support blocks</li>
+              <li>Use within the agreed time window</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="muted-box">
+          Scheduling is not finalized until confirmed by HomeTechCare. I will contact you to coordinate an exact time.
         </div>
       </div>
     </section>
 
-    <section class="section about-trust">
+    <section class="family-section">
       <div class="container">
-        <h2>Local Help from Someone You Can Trust</h2>
+        <div class="section-heading">
+          <h2>Help for parents and loved ones</h2>
+          <p>If a parent or family member is struggling with Wi-Fi, phones, printers, passwords, streaming, or smart devices, HomeTechCare can provide patient in-home help and clear follow-up recommendations.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Everyday Technology Help</h3>
+            <p>Help with printers, Wi-Fi, TVs, remotes, phones, tablets, passwords, and common household technology questions.</p>
+          </article>
+
+          <article class="card">
+            <h3>Simple Device Support</h3>
+            <p>Assistance with settings, updates, apps, clocks, connections, and devices that can be frustrating to use.</p>
+          </article>
+
+          <article class="card">
+            <h3>Calm, In-Person Instruction</h3>
+            <p>The goal is not just to fix the problem, but to help people feel comfortable using their technology.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Local help from someone you can trust</h2>
+          <p>HomeTechCare is personal, practical, and local.</p>
+        </div>
 
         <div class="about-wrap">
           <div class="about-photo">
             <img src="images/jay-photo.jpg" alt="Jay White, HomeTechCare" />
           </div>
 
-          <div class="about-text">
+          <div class="about-text card">
             <p>
               HomeTechCare is operated by Jay White, a longtime technology and engineering professional with decades of hands-on experience helping people solve technical problems clearly and calmly.
             </p>
-
-            <p>
-              The goal is simple: make the technology in your home easier to use, easier to understand, and less frustrating.
-            </p>
-
             <p>
               I listen first, ask questions, explain options clearly, and help you choose the solution that makes the most sense.
+            </p>
+            <p>
+              The goal is simple: make the technology in your home easier to use, easier to understand, and less frustrating.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="request-help">
-      <div class="container help-form-section">
+    <section id="contact">
+      <div class="container">
+        <div class="cta-band">
+          <div>
+            <h2>Need help today?</h2>
+            <p>Start with a quick phone call or send a request below. Plain English is perfect.</p>
+          </div>
+          <a class="secondary-button" href="tel:15094166379">Call (509) 416-6379</a>
+        </div>
 
-        <form
-          class="help-form"
-          action="https://formsubmit.co/hello@hometechcare.us"
-          method="POST"
-        >
-
-          <input type="hidden" name="_subject" value="New HomeTechCare tech help request" />
+        <form class="contact-form" action="https://formsubmit.co/hello@hometechcare.us" method="POST" style="margin-top: 1.5rem;">
+          <input type="hidden" name="_subject" value="New HomeTechCare website inquiry" />
+          <input type="hidden" name="_next" value="https://hometechcare.us/thank-you.html" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://hometechcare.us/thank-you.html" />
-          <input type="hidden" name="source" id="source" />
-          <input type="hidden" name="landing_page" id="landing_page" />
+          <input type="hidden" name="source" id="source" readonly />
+          <input type="hidden" name="landing_page" id="landing_page" readonly />
+          <input type="hidden" name="_autoresponse" value="Thank you for contacting HomeTechCare. We received your request and will get back to you as soon as possible. If your issue is urgent, please call or text us directly." />
 
-          <div class="form-intro">
-            <h3>Tell me what is going on</h3>
-            <p>
-              You do not need to know the technical terms. Answer what you can, skip what you do not know, and describe the problem in your own words.
-            </p>
-            <p>
-              Please do not include passwords, payment information, account numbers, or private login details in this form.
-            </p>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
+          <div class="form-grid">
+            <div>
               <label for="name">Your Name</label>
               <input id="name" name="name" type="text" required />
             </div>
 
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input id="phone" name="phone" type="tel" />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
+            <div>
               <label for="email">Your Email</label>
               <input id="email" name="email" type="email" required />
             </div>
 
-            <div class="form-group">
+            <div>
+              <label for="phone">Phone Number</label>
+              <input id="phone" name="phone" type="tel" />
+            </div>
+
+            <div>
               <label for="best_contact">Best way to contact you</label>
               <select id="best_contact" name="best_contact">
                 <option value="">Please choose</option>
@@ -207,27 +318,8 @@
             </div>
           </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="best_time">Best time to reach you</label>
-              <input id="best_time" name="best_time" type="text" placeholder="Example: weekday mornings, after 4 PM, weekends" />
-            </div>
-
-            <div class="form-group">
-              <label for="who_needs_help">Who needs help?</label>
-              <select id="who_needs_help" name="who_needs_help">
-                <option value="">Please choose</option>
-                <option>Me</option>
-                <option>My parent or loved one</option>
-                <option>My household</option>
-                <option>My small business or home office</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
+          <div style="margin-top: 1rem;">
             <label class="checkbox-group-title">What kind of help do you need?</label>
-
             <div class="checkbox-grid">
               <label><input type="checkbox" name="help_needed[]" value="Wi-Fi or internet problems"><span>Wi-Fi or internet problems</span></label>
               <label><input type="checkbox" name="help_needed[]" value="Computer running slow or not working"><span>Computer running slow or not working</span></label>
@@ -244,47 +336,19 @@
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="problem_description">What is going on?</label>
-            <textarea
-              id="problem_description"
-              name="problem_description"
-              placeholder="Describe what you are trying to do, what is not working, when it started, and anything you have already tried. Plain English is perfect."
-              required
-            ></textarea>
-          </div>
-
-          <div class="form-group">
-            <label class="checkbox-group-title">Devices involved <span class="small-note">(check any that apply)</span></label>
-
-            <div class="checkbox-grid">
-              <label><input type="checkbox" name="devices_involved[]" value="Windows computer"><span>Windows computer</span></label>
-              <label><input type="checkbox" name="devices_involved[]" value="Mac computer"><span>Mac computer</span></label>
-              <label><input type="checkbox" name="devices_involved[]" value="iPhone"><span>iPhone</span></label>
-              <label><input type="checkbox" name="devices_involved[]" value="Android phone"><span>Android phone</span></label>
-              <label><input type="checkbox" name="devices_involved[]" value="iPad or tablet"><span>iPad or tablet</span></label>
-              <label><input type="checkbox" name="devices_involved[]" value="Printer"><span>Printer</span></label>
-              <label><input type="checkbox" name="devices_involved[]" value="Router or Wi-Fi equipment"><span>Router or Wi-Fi equipment</span></label>
-              <label><input type="checkbox" name="devices_involved[]" value="Smart TV"><span>Smart TV</span></label>
-              <label><input type="checkbox" name="devices_involved[]" value="Streaming device"><span>Streaming device</span></label>
-              <label><input type="checkbox" name="devices_involved[]" value="Smart home device"><span>Smart home device</span></label>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="device_brand_model">Device brand/model, if known</label>
-              <input id="device_brand_model" name="device_brand_model" type="text" placeholder="Example: iPhone 13, HP printer, Dell laptop" />
+          <div class="form-grid" style="margin-top: 1rem;">
+            <div>
+              <label for="who_needs_help">Who needs help?</label>
+              <select id="who_needs_help" name="who_needs_help">
+                <option value="">Please choose</option>
+                <option>Me</option>
+                <option>My parent or loved one</option>
+                <option>My household</option>
+                <option>My small business or home office</option>
+              </select>
             </div>
 
-            <div class="form-group">
-              <label for="operating_system">Operating system, if known</label>
-              <input id="operating_system" name="operating_system" type="text" placeholder="Example: Windows 11, macOS, iOS 18, Android, not sure" />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
+            <div>
               <label for="internet_provider">Internet provider, if relevant</label>
               <select id="internet_provider" name="internet_provider">
                 <option value="">Please choose</option>
@@ -299,88 +363,80 @@
                 <option>Not relevant</option>
               </select>
             </div>
+          </div>
 
-            <div class="form-group">
-              <label for="wifi_affected">If internet/Wi-Fi, what is affected?</label>
-              <select id="wifi_affected" name="wifi_affected">
-                <option value="">Please choose</option>
-                <option>Whole house</option>
-                <option>One room or area</option>
-                <option>One device only</option>
-                <option>Streaming or TV only</option>
-                <option>Printer only</option>
-                <option>Not sure</option>
-                <option>Not relevant</option>
-              </select>
+          <div style="margin-top: 1rem;">
+            <label class="checkbox-group-title">Devices involved <span class="small-note">(check any that apply)</span></label>
+            <div class="checkbox-grid">
+              <label><input type="checkbox" name="devices_involved[]" value="Windows computer"><span>Windows computer</span></label>
+              <label><input type="checkbox" name="devices_involved[]" value="Mac computer"><span>Mac computer</span></label>
+              <label><input type="checkbox" name="devices_involved[]" value="iPhone"><span>iPhone</span></label>
+              <label><input type="checkbox" name="devices_involved[]" value="Android phone"><span>Android phone</span></label>
+              <label><input type="checkbox" name="devices_involved[]" value="iPad or tablet"><span>iPad or tablet</span></label>
+              <label><input type="checkbox" name="devices_involved[]" value="Printer"><span>Printer</span></label>
+              <label><input type="checkbox" name="devices_involved[]" value="Router or Wi-Fi equipment"><span>Router or Wi-Fi equipment</span></label>
+              <label><input type="checkbox" name="devices_involved[]" value="Smart TV"><span>Smart TV</span></label>
+              <label><input type="checkbox" name="devices_involved[]" value="Streaming device"><span>Streaming device</span></label>
+              <label><input type="checkbox" name="devices_involved[]" value="Smart home device"><span>Smart home device</span></label>
             </div>
           </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="router_location">Router/modem location, if known</label>
-              <input id="router_location" name="router_location" type="text" placeholder="Example: office, living room, garage, closet, not sure" />
+          <div class="form-grid" style="margin-top: 1rem;">
+            <div>
+              <label for="device_brand_model">Device brand/model, if known</label>
+              <input id="device_brand_model" name="device_brand_model" type="text" placeholder="Example: iPhone 13, HP printer, Dell laptop" />
             </div>
 
-            <div class="form-group">
-              <label for="wifi_password_known">Do you know your Wi-Fi name/password?</label>
-              <select id="wifi_password_known" name="wifi_password_known">
-                <option value="">Please choose</option>
-                <option>Yes</option>
-                <option>No</option>
-                <option>Not sure</option>
-                <option>Not relevant</option>
-              </select>
+            <div>
+              <label for="operating_system">Operating system, if known</label>
+              <input id="operating_system" name="operating_system" type="text" placeholder="Example: Windows 11, macOS, iOS, Android, not sure" />
             </div>
           </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="urgency">How urgent is this?</label>
-              <select id="urgency" name="urgency">
-                <option value="">Please choose</option>
-                <option>Not urgent</option>
-                <option>Sometime this week</option>
-                <option>As soon as possible</option>
-                <option>Emergency / urgent</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="preferred_next_step">Preferred next step</label>
-              <select id="preferred_next_step" name="preferred_next_step">
-                <option value="">Please choose</option>
-                <option>Please call me</option>
-                <option>Please text me</option>
-                <option>Please email me</option>
-                <option>I would like to schedule a visit</option>
-                <option>I am just asking a question first</option>
-              </select>
-            </div>
+          <div style="margin-top: 1rem;">
+            <label for="message">What do you need help with?</label>
+            <textarea id="message" name="message" required placeholder="Describe the problem in your own words. Please do not include passwords, payment information, or private login details."></textarea>
           </div>
 
-          <div class="form-submit-row">
-            <button type="submit" class="btn btn-primary">Send Tech Help Request</button>
-            <p class="form-note">
-              Not sure what the problem is? That is completely okay. We will figure it out together.
-            </p>
+          <div class="form-actions">
+            <button class="cta-button form-button" type="submit">Send Request</button>
+            <p class="small-note form-note">We’ll reply as soon as we can.</p>
           </div>
-
         </form>
+
+        <div class="contact-list">
+          <div class="contact-item">Phone: <a href="tel:15094166379">(509) 416-6379</a></div>
+          <div class="contact-item">Email: <a href="mailto:hello@hometechcare.us">hello@hometechcare.us</a></div>
+          <div class="contact-item">Service Area: Tri-Cities, Washington and nearby communities</div>
+        </div>
+
+        <p class="small-note">HomeTechCare provides technology setup assistance, education, and support. We do not perform licensed electrical work.</p>
       </div>
     </section>
 
   </main>
 
-  <footer>
-    <p>HomeTechCare | Simple, reliable help for the technology in your home.</p>
+  <footer class="footer">
+    <div class="container footer-top">
+      <div>
+        <strong>HomeTechCare.us</strong><br />
+        Simple help for your home technology
+      </div>
+      <div>© 2026 HomeTechCare. All rights reserved.</div>
+    </div>
   </footer>
 
   <script>
-    document.getElementById("landing_page").value = window.location.href;
+    const landingPage = document.getElementById('landing_page');
+    if (landingPage) {
+      landingPage.value = window.location.href;
+    }
 
-    const params = new URLSearchParams(window.location.search);
-    const source = params.get("source") || params.get("utm_source") || "";
-    document.getElementById("source").value = source;
+    const sourceField = document.getElementById('source');
+    if (sourceField) {
+      const params = new URLSearchParams(window.location.search);
+      sourceField.value = params.get('source') || params.get('utm_source') || '';
+    }
   </script>
 
 </body>
