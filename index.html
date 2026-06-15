@@ -40,7 +40,7 @@
           </p>
 
           <div class="hero-buttons">
-            <a href="#contact" class="cta-button">Start With a Phone Consultation</a>
+            <a href="#contact" class="cta-button">Tell Me What You Need Help With</a>
             <a href="#family-tech-care" class="secondary-button">Learn About Family Tech Care</a>
           </div>
 
@@ -288,10 +288,10 @@
       <div class="container">
         <div class="cta-band">
           <div>
-            <h2>Start with a simple call</h2>
+            <h2>Tell me what you need help with</h2>
             <p>
-              Tell me what is going on. I will listen, ask a few practical questions, and help you decide
-              the most sensible next step.
+              Start by sharing what is going on in plain English. I will review it, ask a few practical questions,
+              and help you decide the most sensible next step.
             </p>
           </div>
           <div>
@@ -305,7 +305,7 @@
           method="POST"
           style="margin-top: 1.5rem;"
         >
-          <input type="hidden" name="_subject" value="🚨 NEW LEAD - HomeTechCare" />
+          <input type="hidden" name="_subject" value="🚨 NEW TECH HELP REQUEST - HomeTechCare" />
           <input type="hidden" name="_next" value="https://hometechcare.us/thank-you.html" />
           <input type="hidden" name="_bcc" value="e8yh4n9vus@pomail.net" />
           <input type="hidden" name="source" id="source" />
@@ -314,10 +314,21 @@
           <input
             type="hidden"
             name="_autoresponse"
-            value="Thank you for contacting HomeTechCare. We received your request and will get back to you as soon as possible. Most requests begin with a simple phone consultation so we can recommend the most sensible next step. If your issue is urgent, please call or text us directly."
+            value="Thank you for contacting HomeTechCare. We received your tech help request and will get back to you as soon as possible. Most requests begin with a simple phone consultation so we can understand the issue and recommend the most sensible next step. Please do not send passwords or private account information by email. If your issue is urgent, please call or text us directly."
           />
           <input type="hidden" name="_template" value="table" />
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <div class="form-intro card">
+            <h3>Tell me what is going on</h3>
+            <p>
+              You do not need to know the technical terms. Answer what you can, skip what you do not know,
+              and describe the problem in your own words.
+            </p>
+            <p class="small-note">
+              Please do not include passwords, payment information, account numbers, or private login details in this form.
+            </p>
+          </div>
 
           <div class="form-grid">
             <div>
@@ -326,29 +337,58 @@
             </div>
 
             <div>
-              <label for="email"><strong>Your Email</strong></label>
-              <input id="email" name="email" type="email" required />
-            </div>
-
-            <div>
               <label for="phone"><strong>Phone Number</strong></label>
-              <input id="phone" name="phone" type="tel" />
+              <input id="phone" name="phone" type="tel" required />
             </div>
 
             <div>
-              <label for="help-type"><strong>What kind of help do you need?</strong></label>
-              <select id="help-type" name="help_type">
+              <label for="email"><strong>Your Email</strong></label>
+              <input id="email" name="email" type="email" />
+            </div>
+
+            <div>
+              <label for="preferred-contact"><strong>Best way to contact you</strong></label>
+              <select id="preferred-contact" name="preferred_contact">
                 <option value="">Please choose</option>
-                <option>Start with a Phone Consultation</option>
-                <option>Help for Myself</option>
-                <option>Help for a Parent or Loved One</option>
-                <option>Computer or Wi-Fi Help</option>
-                <option>Printer or Device Help</option>
-                <option>TV or Streaming Help</option>
-                <option>Password, Account, or App Help</option>
-                <option>Planning a Larger Home Tech Project</option>
-                <option>General Question</option>
+                <option>Call me</option>
+                <option>Text me</option>
+                <option>Email me</option>
+                <option>Any of these is fine</option>
               </select>
+            </div>
+
+            <div>
+              <label for="best-time"><strong>Best time to reach you</strong></label>
+              <input id="best-time" name="best_time_to_contact" type="text" placeholder="Example: weekday mornings, after 4 PM, weekends" />
+            </div>
+
+            <div>
+              <label for="help-for"><strong>Who needs help?</strong></label>
+              <select id="help-for" name="help_for">
+                <option value="">Please choose</option>
+                <option>Me</option>
+                <option>A parent or loved one</option>
+                <option>My household or family</option>
+                <option>Someone else</option>
+              </select>
+            </div>
+
+            <div style="grid-column: 1 / -1;">
+              <label><strong>What kind of help do you need?</strong></label>
+              <div class="check-grid">
+                <label><input type="checkbox" name="help_needed[]" value="Wi-Fi or internet problems" /> Wi-Fi or internet problems</label>
+                <label><input type="checkbox" name="help_needed[]" value="Computer running slow or not working" /> Computer running slow or not working</label>
+                <label><input type="checkbox" name="help_needed[]" value="Printer setup or printer problem" /> Printer setup or printer problem</label>
+                <label><input type="checkbox" name="help_needed[]" value="Phone or tablet help" /> Phone or tablet help</label>
+                <label><input type="checkbox" name="help_needed[]" value="Email, passwords, or account access" /> Email, passwords, or account access</label>
+                <label><input type="checkbox" name="help_needed[]" value="TV, streaming, Roku, Fire TV, or remotes" /> TV, streaming, Roku, Fire TV, or remotes</label>
+                <label><input type="checkbox" name="help_needed[]" value="Smart home devices" /> Smart home devices</label>
+                <label><input type="checkbox" name="help_needed[]" value="New device setup or data transfer" /> New device setup or data transfer</label>
+                <label><input type="checkbox" name="help_needed[]" value="Photos, cloud storage, backup, or files" /> Photos, cloud storage, backup, or files</label>
+                <label><input type="checkbox" name="help_needed[]" value="Scam, pop-up, or security concern" /> Scam, pop-up, or security concern</label>
+                <label><input type="checkbox" name="help_needed[]" value="Help for a parent or loved one" /> Help for a parent or loved one</label>
+                <label><input type="checkbox" name="help_needed[]" value="Not sure - I need help figuring it out" /> Not sure — I need help figuring it out</label>
+              </div>
             </div>
 
             <div style="grid-column: 1 / -1;">
@@ -358,13 +398,106 @@
                 name="message"
                 rows="6"
                 required
-                placeholder="Please describe the problem, who needs help, and whether you prefer a phone consultation, remote help, or an in-home visit."
+                placeholder="Describe what you are trying to do, what is not working, when it started, and anything you have already tried. Plain English is perfect."
               ></textarea>
+            </div>
+
+            <div style="grid-column: 1 / -1;">
+              <label><strong>Devices involved</strong> <span class="small-note">(check any that apply)</span></label>
+              <div class="check-grid">
+                <label><input type="checkbox" name="devices_involved[]" value="Windows computer" /> Windows computer</label>
+                <label><input type="checkbox" name="devices_involved[]" value="Mac computer" /> Mac computer</label>
+                <label><input type="checkbox" name="devices_involved[]" value="iPhone" /> iPhone</label>
+                <label><input type="checkbox" name="devices_involved[]" value="Android phone" /> Android phone</label>
+                <label><input type="checkbox" name="devices_involved[]" value="iPad or tablet" /> iPad or tablet</label>
+                <label><input type="checkbox" name="devices_involved[]" value="Printer" /> Printer</label>
+                <label><input type="checkbox" name="devices_involved[]" value="Router or Wi-Fi equipment" /> Router or Wi-Fi equipment</label>
+                <label><input type="checkbox" name="devices_involved[]" value="Smart TV" /> Smart TV</label>
+                <label><input type="checkbox" name="devices_involved[]" value="Streaming device" /> Streaming device</label>
+                <label><input type="checkbox" name="devices_involved[]" value="Smart home device" /> Smart home device</label>
+              </div>
+            </div>
+
+            <div>
+              <label for="device-details"><strong>Device brand/model, if known</strong></label>
+              <input id="device-details" name="device_brand_model" type="text" placeholder="Example: iPhone 13, HP printer, Dell laptop" />
+            </div>
+
+            <div>
+              <label for="operating-system"><strong>Operating system, if known</strong></label>
+              <input id="operating-system" name="operating_system" type="text" placeholder="Example: Windows 11, macOS, iOS 18, Android, not sure" />
+            </div>
+
+            <div>
+              <label for="internet-provider"><strong>Internet provider, if relevant</strong></label>
+              <select id="internet-provider" name="internet_provider">
+                <option value="">Please choose</option>
+                <option>Spectrum</option>
+                <option>Ziply Fiber</option>
+                <option>T-Mobile Home Internet</option>
+                <option>Verizon Home Internet</option>
+                <option>CenturyLink / Lumen</option>
+                <option>Xfinity</option>
+                <option>Other</option>
+                <option>Not sure</option>
+                <option>Not relevant to this issue</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="internet-scope"><strong>If internet/Wi-Fi, what is affected?</strong></label>
+              <select id="internet-scope" name="internet_wifi_scope">
+                <option value="">Please choose</option>
+                <option>One device</option>
+                <option>Several devices</option>
+                <option>Everything in the house</option>
+                <option>Only certain rooms</option>
+                <option>Not sure</option>
+                <option>Not relevant</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="router-location"><strong>Router/modem location, if known</strong></label>
+              <input id="router-location" name="router_modem_location" type="text" placeholder="Example: office, living room, garage, closet, not sure" />
+            </div>
+
+            <div>
+              <label for="wifi-password"><strong>Do you know your Wi-Fi name/password?</strong></label>
+              <select id="wifi-password" name="wifi_name_password_available">
+                <option value="">Please choose</option>
+                <option>Yes, I can have it available</option>
+                <option>No</option>
+                <option>Not sure</option>
+                <option>Not relevant</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="urgency"><strong>How urgent is this?</strong></label>
+              <select id="urgency" name="urgency">
+                <option value="">Please choose</option>
+                <option>Not urgent</option>
+                <option>Within the next few days</option>
+                <option>As soon as possible</option>
+                <option>Urgent - no internet, cannot work, or cannot communicate</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="next-step"><strong>Preferred next step</strong></label>
+              <select id="next-step" name="preferred_next_step">
+                <option value="">Please choose</option>
+                <option>Phone consultation first</option>
+                <option>Text or email first</option>
+                <option>In-home visit</option>
+                <option>Not sure - please recommend the best next step</option>
+              </select>
             </div>
           </div>
 
           <div class="form-actions">
-            <button type="submit" class="cta-button form-button">Send Request</button>
+            <button type="submit" class="cta-button form-button">Send Tech Help Request</button>
             <span class="small-note form-note">Not sure what the problem is? That is completely okay. We will figure it out together.</span>
           </div>
         </form>
