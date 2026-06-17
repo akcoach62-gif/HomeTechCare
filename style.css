@@ -430,7 +430,7 @@ textarea {
   resize: vertical;
 }
 
-/* Checkbox groups: supports both class names */
+/* Checkbox groups */
 .check-grid,
 .checkbox-grid {
   display: grid;
@@ -443,17 +443,18 @@ textarea {
 .checkbox-grid label {
   display: flex;
   align-items: flex-start;
+  justify-content: flex-start;
   gap: 0.65rem;
   margin: 0;
   padding: 0.85rem 1rem;
   border: 1px solid var(--border);
   border-radius: 12px;
   background: #f8fbff;
+  color: var(--text);
   font-size: 0.95rem;
+  font-weight: 700;
   line-height: 1.3;
   cursor: pointer;
-  color: var(--text);
-  font-weight: 700;
 }
 
 .check-grid label:hover,
@@ -462,10 +463,8 @@ textarea {
   border-color: #8bb8e8;
 }
 
-.check-grid input[type="checkbox"],
-.checkbox-grid input[type="checkbox"] {
-  appearance: auto;
-  -webkit-appearance: checkbox;
+/* Important: keep checkbox inputs from inheriting text-field styling */
+input[type="checkbox"] {
   width: 16px;
   height: 16px;
   min-width: 16px;
@@ -473,14 +472,15 @@ textarea {
   max-width: 16px;
   max-height: 16px;
   padding: 0;
-  margin: 2px 0 0;
+  margin: 2px 0 0 0;
   flex: 0 0 16px;
   accent-color: #2563eb;
 }
 
 .check-grid span,
 .checkbox-grid span {
-  display: inline-block;
+  display: inline;
+  flex: 1;
 }
 
 .check-grid input[type="checkbox"]:checked + span,
