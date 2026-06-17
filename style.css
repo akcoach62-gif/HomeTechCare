@@ -570,3 +570,26 @@ textarea {
     padding: 1.25rem;
   }
 }
+/* Header logo size override */
+.topbar .brand-logo {
+  width: 560px !important;
+  max-width: 560px !important;
+  max-height: none !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+.topbar-inner {
+  min-height: 135px !important;
+}
+
+@media (max-width: 760px) {
+  .topbar .brand-logo {
+    width: 100% !important;
+    max-width: 340px !important;
+  }
+
+  .topbar-inner {
+    min-height: auto !important;
+  }
+}
