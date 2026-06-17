@@ -21,27 +21,31 @@
         height: 44px;
       }
     }
-  </style>
 
-  <style>
-    /* Keeps section titles visible when using top navigation links with the sticky header. */
-    html {
-      scroll-padding-top: 105px;
+    .about-jay-grid {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 1.4rem;
+      align-items: center;
     }
 
-    section[id],
-    main[id] {
-      scroll-margin-top: 105px;
+    .about-photo {
+      width: 190px;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
     }
 
-    @media (max-width: 960px) {
-      html {
-        scroll-padding-top: 80px;
+    @media (max-width: 700px) {
+      .about-jay-grid {
+        grid-template-columns: 1fr;
       }
 
-      section[id],
-      main[id] {
-        scroll-margin-top: 80px;
+      .about-photo {
+        width: 170px;
+        height: 170px;
       }
     }
   </style>
@@ -147,17 +151,22 @@
         </div>
 
         <div class="about-card card">
-          <h3>About HomeTechCare</h3>
-          <p>
-            I’m Jay, the person behind HomeTechCare. My background is in technology, operations,
-            communications systems, and real-world problem solving. I started HomeTechCare to offer
-            patient, local help for the everyday technology people depend on at home—without confusing
-            jargon, rushed explanations, or unnecessary upselling.
-          </p>
-          <p>
-            My approach is simple: listen first, explain clearly, recommend the most sensible path,
-            and help you feel more confident about the technology in your home.
-          </p>
+          <div class="about-jay-grid">
+            <img src="jay-home-tech-care-square.jpg" alt="Jay from HomeTechCare" class="about-photo" />
+            <div>
+              <h3>About Jay</h3>
+              <p>
+                I’m Jay, the person behind HomeTechCare. My background is in technology, operations,
+                communications systems, and real-world problem solving. I started HomeTechCare to offer
+                patient, local help for the everyday technology people depend on at home—without confusing
+                jargon, rushed explanations, or unnecessary upselling.
+              </p>
+              <p>
+                My approach is simple: listen first, explain clearly, recommend the most sensible path,
+                and help you feel more confident about the technology in your home.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
