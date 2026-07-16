@@ -18,6 +18,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 170px;
 }
 
 body {
@@ -96,8 +97,10 @@ a {
   color: var(--orange);
 }
 
-.anchor-target {
-  scroll-margin-top: 145px;
+.anchor-target,
+section[id],
+main[id] {
+  scroll-margin-top: 170px;
 }
 
 /* Hero */
