@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeTechCare Service Area | Northwest Oregon Home Technology Help</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="description" content="HomeTechCare provides patient, practical in-home technology help for Wilsonville, Tualatin, Sherwood, Canby, Tigard, and nearby Northwest Oregon communities." />
+    <style>
+      .service-area-hero { padding: 2.25rem 0 4rem; background: linear-gradient(135deg, #ffffff 0%, #edf6ff 100%); }
+      .service-area-intro { max-width: 860px; margin: 0 auto 2rem; text-align: center; }
+      .service-area-intro h1 { margin-bottom: 0.85rem; }
+      .service-area-intro p { font-size: 1.12rem; color: var(--muted); }
+      .service-map-card { max-width: 1180px; margin: 0 auto; padding: 1rem; background: #ffffff; border: 1px solid var(--border); border-radius: 24px; box-shadow: var(--shadow); }
+      .service-map-card img { width: 100%; height: auto; border-radius: 18px; }
+      .service-area-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; align-items: stretch; }
+      .city-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+      .city-pill { padding: 0.85rem 1rem; border: 1px solid var(--border); border-radius: 999px; background: #f8fbff; color: var(--blue); font-weight: 900; text-align: center; }
+      .service-note { margin-top: 1.25rem; color: var(--muted); font-size: 0.95rem; }
+      @media (max-width: 800px) { .service-area-grid, .city-list { grid-template-columns: 1fr; } .service-area-hero { padding-top: 1.5rem; } }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a href="index.html#top" class="brand" aria-label="HomeTechCare home"><img src="HomeTechCare.png" alt="HomeTechCare" class="brand-logo" /></a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="index.html#family-tech-care">Family Tech Care</a>
+          <a href="service-area.html">Service Area</a>
+          <a href="https://jamesbernardwhite26-wrhqn.wordpress.com/">Articles</a>
+          <a href="index.html#services">What We Help With</a>
+          <a href="index.html#how-it-works">How It Works</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="index.html#contact" class="cta-button">Start With a Call</a>
+        </nav>
+      </div>
+    </header>
+    <main id="top">
+      <section class="service-area-hero">
+        <div class="container">
+          <div class="service-area-intro">
+            <div class="eyebrow">Northwest Oregon home technology help</div>
+            <h1>HomeTechCare Service Area</h1>
+            <p>HomeTechCare provides patient, practical in-home technology help for families in Wilsonville, Tualatin, Sherwood, Canby, Tigard, and nearby Northwest Oregon communities.</p>
+          </div>
+          <div class="service-map-card"><img src="service-area-map.svg" alt="HomeTechCare service area map showing Wilsonville, Tualatin, Sherwood, Canby, and Tigard" /></div>
+        </div>
+      </section>
+      <section>
+        <div class="container service-area-grid">
+          <article class="card">
+            <h2>Current focus area</h2>
+            <p>HomeTechCare is currently focused on local service in and around these Northwest Oregon communities:</p>
+            <div class="city-list" aria-label="HomeTechCare service cities"><div class="city-pill">Wilsonville</div><div class="city-pill">Tualatin</div><div class="city-pill">Sherwood</div><div class="city-pill">Canby</div><div class="city-pill">Tigard</div></div>
+            <p class="service-note">Nearby communities may also be possible depending on location, schedule, and the type of help needed.</p>
+          </article>
+          <article class="card">
+            <h2>Not sure if you are in range?</h2>
+            <p>Reach out anyway. If you are nearby, I will let you know what is possible. If the location is outside my practical service area, I may still be able to help by phone or point you in the right direction.</p>
+            <p>HomeTechCare can help with Wi-Fi, printers, phones, tablets, TV and streaming setups, smart devices, passwords, family tech support, and practical technology decisions around the home.</p>
+            <div class="hero-buttons"><a href="index.html#contact" class="cta-button">Request Help</a><a href="tel:+15412247960" class="secondary-button">Call/Text 541-224-7960</a></div>
+          </article>
+        </div>
+      </section>
+      <section class="why-choose">
+        <div class="container">
+          <div class="section-heading"><h2>Local, patient, practical help</h2><p>The goal is to make the technology in your home easier to understand and use without pressure, jargon, or unnecessary upselling.</p></div>
+          <div class="grid-3"><article class="card"><h3>Start with the real problem</h3><p>We begin with plain-language questions so the issue is understood before recommending equipment, changes, or an in-home visit.</p></article><article class="card"><h3>Good fit for families</h3><p>HomeTechCare is especially useful when an older adult, parent, spouse, or loved one needs calm help with everyday technology.</p></article><article class="card"><h3>Practical next steps</h3><p>Sometimes the answer is a small setting, a simpler remote, a better Wi-Fi location, or a clearer plan before spending money.</p></article></div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
