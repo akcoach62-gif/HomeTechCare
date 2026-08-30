@@ -1,23 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
-  <title id="title">HomeTechCare Service Area Map</title>
-  <desc id="desc">A simplified service area map for HomeTechCare showing Wilsonville, Tualatin, Sherwood, Canby, and Tigard in Northwest Oregon.</desc>
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eaf3fb"/></linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0b2f55" flood-opacity="0.15"/></filter>
-    <style>.blue{fill:#123c69}.muted{fill:#63748a}.label{font:700 32px Arial,Helvetica,sans-serif;fill:#123c69}.tiny{font:700 20px Arial,Helvetica,sans-serif;fill:#63748a}.pintext{font:800 28px Arial,Helvetica,sans-serif;fill:#123c69}.road{stroke:#9bb7cc;stroke-width:12;stroke-linecap:round;fill:none;opacity:.55}.river{stroke:#7cc5df;stroke-width:28;stroke-linecap:round;fill:none;opacity:.45}.coverage{fill:#d9f2e4;stroke:#2f855a;stroke-width:5;opacity:.9}.pin{fill:#2f855a;stroke:#ffffff;stroke-width:6}.pin-dot{fill:#ffffff}.card{fill:#ffffff;stroke:#d8e4f0;stroke-width:3}.soft{fill:#f3f8fc;stroke:#d8e4f0;stroke-width:3}</style>
+    <style>
+      .title { font: 700 20px Arial, Helvetica, sans-serif; fill: #173F73; }
+      .label { font: 700 16px Arial, Helvetica, sans-serif; fill: #173F73; }
+      .small { font: 400 13px Arial, Helvetica, sans-serif; fill: #5B6B7F; }
+      .bullet { font: 700 16px Arial, Helvetica, sans-serif; fill: #173F73; }
+      .body { font: 400 15px Arial, Helvetica, sans-serif; fill: #4A5C6E; }
+      .town { font: 700 15px Arial, Helvetica, sans-serif; fill: #173F73; }
+      .road { stroke: #A9C7D9; stroke-width: 10; stroke-linecap: round; opacity: 0.7; }
+      .minor-road { stroke: #B9CFDB; stroke-width: 6; stroke-linecap: round; opacity: 0.7; }
+    </style>
   </defs>
-  <rect width="1600" height="900" fill="url(#bg)"/>
-  <g transform="translate(85 60)">
-    <rect x="0" y="0" width="1430" height="780" rx="36" fill="#ffffff" filter="url(#shadow)"/>
-    <g transform="translate(60 54)"><rect x="0" y="20" width="74" height="58" rx="10" fill="#123c69"/><path d="M-5 37 L37 0 L79 37" fill="none" stroke="#2f855a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 55 q12 -12 24 0" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/><circle cx="37" cy="65" r="4" fill="#ffffff"/><text x="102" y="42" class="blue" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="900">HomeTechCare</text><text x="104" y="75" class="muted" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Simple, reliable help for the technology in your home</text></g>
-    <text x="715" y="88" text-anchor="middle" class="blue" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="900">HomeTechCare Service Area</text>
-    <text x="715" y="130" text-anchor="middle" class="muted" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">Serving Wilsonville, Tualatin, Sherwood, Canby, Tigard, and nearby Northwest Oregon communities</text>
-    <g transform="translate(88 178)">
-      <rect x="0" y="0" width="820" height="470" rx="26" class="soft"/><path d="M510 70 C620 100 720 190 708 302 C694 434 560 462 440 418 C320 374 225 318 198 220 C170 120 360 30 510 70 Z" class="coverage"/><path d="M520 26 C490 142 480 245 514 441" class="river"/><path d="M610 46 C585 135 548 242 572 432" class="road"/><path d="M165 270 C330 250 485 237 690 222" class="road"/><path d="M220 355 C340 310 465 300 658 327" class="road" opacity=".35"/><text x="620" y="78" class="tiny">I-5</text>
-      <g transform="translate(520 255)"><circle class="pin" r="22"/><circle class="pin-dot" r="7"/><text x="34" y="10" class="pintext">Wilsonville</text></g><g transform="translate(500 150)"><circle class="pin" r="19"/><circle class="pin-dot" r="6"/><text x="32" y="9" class="label">Tualatin</text></g><g transform="translate(385 210)"><circle class="pin" r="19"/><circle class="pin-dot" r="6"/><text x="-165" y="9" class="label">Sherwood</text></g><g transform="translate(590 355)"><circle class="pin" r="19"/><circle class="pin-dot" r="6"/><text x="32" y="9" class="label">Canby</text></g><g transform="translate(482 82)"><circle class="pin" r="19"/><circle class="pin-dot" r="6"/><text x="-104" y="9" class="label">Tigard</text></g>
-      <text x="44" y="430" class="tiny">Simplified map for service-area communication — not a boundary guarantee</text>
-    </g>
-    <g transform="translate(975 178)"><rect x="0" y="0" width="350" height="470" rx="26" class="card"/><text x="36" y="58" class="blue" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Local in-home help</text><text x="36" y="105" class="muted" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">Patient support for:</text><g font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="800" fill="#123c69"><text x="42" y="160">✓ Wi‑Fi &amp; internet</text><text x="42" y="205">✓ Printers &amp; devices</text><text x="42" y="250">✓ Phones &amp; tablets</text><text x="42" y="295">✓ TV &amp; streaming</text><text x="42" y="340">✓ Smart devices</text><text x="42" y="385">✓ Family tech care</text></g><rect x="35" y="414" width="280" height="1" fill="#d8e4f0"/><text x="36" y="447" class="tiny">JubileeTV Affiliate</text></g>
-    <g transform="translate(88 690)"><rect x="0" y="0" width="1237" height="58" rx="29" fill="#123c69"/><text x="38" y="38" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="800">Local in-home technology help</text><text x="1198" y="38" fill="#ffffff" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="800">HomeTechCare.us  •  541-224-7960</text></g>
-  </g>
+
+  <!-- Outer card -->
+  <rect x="20" y="20" width="1160" height="720" rx="28" fill="#EEF4F8" stroke="#D9E6EF" stroke-width="2"></rect>
+
+  <!-- Map panel -->
+  <rect x="70" y="120" width="640" height="540" rx="22" fill="#EAF1F5" stroke="#C9D9E5" stroke-width="2"></rect>
+
+  <!-- Info panel -->
+  <rect x="760" y="120" width="330" height="540" rx="22" fill="#F6FAFC" stroke="#C9D9E5" stroke-width="2"></rect>
+
+  <!-- Stylized roads -->
+  <path d="M385 110 C360 180, 355 290, 370 410 C382 500, 392 575, 405 650" class="road"></path>
+  <path d="M490 140 C470 230, 455 325, 455 440 C455 515, 448 585, 440 645" class="minor-road"></path>
+  <path d="M190 330 C285 320, 375 315, 500 315 C580 315, 620 322, 675 332" class="minor-road"></path>
+  <path d="M235 435 C300 410, 390 400, 520 398 C590 398, 640 405, 690 415" class="minor-road"></path>
+
+  <!-- Highway labels -->
+  <text x="415" y="170" class="small">I-5</text>
+  <text x="505" y="200" class="small">I-205</text>
+
+  <!-- Service area -->
+  <ellipse cx="430" cy="355" rx="200" ry="145" fill="#CFE8D5" fill-opacity="0.68" stroke="#3E8B63" stroke-width="4"></ellipse>
+
+  <!-- Town dots -->
+  <!-- Wilsonville -->
+  <circle cx="405" cy="385" r="18" fill="#3E8B63"></circle>
+  <circle cx="405" cy="385" r="8" fill="white"></circle>
+  <text x="435" y="392" class="town">Wilsonville</text>
+
+  <!-- Tualatin -->
+  <circle cx="390" cy="280" r="16" fill="#3E8B63"></circle>
+  <circle cx="390" cy="280" r="7" fill="white"></circle>
+  <text x="420" y="286" class="town">Tualatin</text>
+
+  <!-- Sherwood -->
+  <circle cx="295" cy="340" r="16" fill="#3E8B63"></circle>
+  <circle cx="295" cy="340" r="7" fill="white"></circle>
+  <text x="210" y="346" class="town">Sherwood</text>
+
+  <!-- Canby -->
+  <circle cx="470" cy="500" r="16" fill="#3E8B63"></circle>
+  <circle cx="470" cy="500" r="7" fill="white"></circle>
+  <text x="500" y="506" class="town">Canby</text>
+
+  <!-- Tigard -->
+  <circle cx="375" cy="220" r="12" fill="#3E8B63"></circle>
+  <circle cx="375" cy="220" r="5" fill="white"></circle>
+  <text x="295" y="225" class="town">Tigard</text>
+
+  <!-- Center ring around service region -->
+  <circle cx="430" cy="355" r="6" fill="#173F73"></circle>
+
+  <!-- Small town notes -->
+  <text x="250" y="595" class="body">Serving Wilsonville, Tualatin, Sherwood,</text>
+  <text x="280" y="617" class="body">Canby, Tigard, and nearby communities</text>
+
+  <!-- Info panel header -->
+  <text x="790" y="165" class="title">Local in-home help</text>
+  <text x="790" y="195" class="small">Patient support for:</text>
+
+  <!-- Bullets -->
+  <text x="795" y="245" class="bullet">✓ Wi-Fi &amp; internet</text>
+  <text x="795" y="290" class="bullet">✓ Printers &amp; devices</text>
+  <text x="795" y="335" class="bullet">✓ Phones &amp; tablets</text>
+  <text x="795" y="380" class="bullet">✓ TV &amp; streaming</text>
+  <text x="795" y="425" class="bullet">✓ Smart devices</text>
+  <text x="795" y="470" class="bullet">✓ Family tech care</text>
+
+  <!-- Callout box -->
+  <rect x="790" y="525" width="270" height="95" rx="18" fill="#FFF7E8" stroke="#F2C46D" stroke-width="2"></rect>
+  <text x="815" y="560" class="title" style="font-size:18px;">Need help in this area?</text>
+  <text x="815" y="590" class="body">Start with a call or use the website</text>
+  <text x="815" y="612" class="body">to request help.</text>
 </svg>
