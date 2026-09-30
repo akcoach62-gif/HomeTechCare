@@ -1,1 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tell Me What’s Going On | HomeTechCare</title>
+  <meta
+    name="description"
+    content="Tell HomeTechCare what you are trying to do, what happens when you try, and what equipment is involved. No technical terms needed."
+  />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="/index.html" class="brand" aria-label="HomeTechCare home">
+        <img src="/HomeTechCare.png" alt="HomeTechCare" class="brand-logo" />
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="/index.html">Home</a>
+        <a href="/index.html#family-tech-care">Family Tech Care</a>
+        <a href="https://jamesbernardwhite26-wrhqn.wordpress.com/">Articles</a>
+        <a href="/index.html#services">What We Help With</a>
+        <a href="/service-area.html">Service Area</a>
+        <a href="/index.html#pricing">Pricing</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div style="max-width: 820px;">
+          <div class="eyebrow">Start here • plain English is perfect</div>
+          <h1>Tell me what’s going on</h1>
+          <p>
+            You don’t need to know the technical terms. Just tell me what you’re trying to do,
+            what happens when you try, and anything you know about the equipment involved.
+          </p>
+          <p>
+            I’ll take a look and get back to you with the most sensible next step.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="tel:+15412247960" class="cta-button">Call or Text (541) 224-7960</a>
+            <a href="/index.html" class="secondary-button">Back to HomeTechCare</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top: 2rem;">
+      <div class="container">
+        <form
+          class="contact-form"
+          action="https://formsubmit.co/hello@hometechcare.us"
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="🚨 NEW TELL ME REQUEST - HomeTechCare" />
+          <input type="hidden" name="_next" value="https://hometechcare.us/thank-you.html" />
+          <input type="hidden" name="_bcc" value="e8yh4n9vus@pomail.net" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="request_type" value="tellme" />
+          <input type="hidden" name="source" id="source" />
+          <input type="hidden" name="landing_page" id="landing_page" />
+          <input type="hidden" name="referrer" id="referrer" />
+          <input
+            type="hidden"
+            name="_autoresponse"
+            value="Thank you for contacting HomeTechCare. I received your message and will review what you sent. I’ll get back to you with the most sensible next step. Please do not send passwords, payment information, account numbers, or private login details by email."
+          />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <div class="form-intro card">
+            <h3>Tell me what you know</h3>
+            <p>
+              Answer what you can and skip what you don’t know. The goal is simply to give me enough
+              information to understand what you are trying to accomplish.
+            </p>
+            <p class="small-note">
+              Please do not include passwords, payment information, account numbers, or private login details.
+            </p>
+          </div>
+
+          <div class="form-grid">
+            <div>
+              <label for="name"><strong>Your name</strong></label>
+              <input id="name" name="name" type="text" required autocomplete="name" />
+            </div>
+
+            <div>
+              <label for="phone"><strong>Phone number</strong></label>
+              <input id="phone" name="phone" type="tel" required autocomplete="tel" />
+            </div>
+
+            <div>
+              <label for="email"><strong>Email</strong></label>
+              <input id="email" name="email" type="email" autocomplete="email" />
+            </div>
+
+            <div>
+              <label for="preferred-contact"><strong>How should I contact you?</strong></label>
+              <select id="preferred-contact" name="preferred_contact">
+                <option value="">Please choose</option>
+                <option>Text</option>
+                <option>Call</option>
+                <option>Email</option>
+                <option>Any of these is fine</option>
+              </select>
+            </div>
+
+            <div style="grid-column: 1 / -1;">
+              <label for="help-for"><strong>Who needs help?</strong></label>
+              <select id="help-for" name="help_for">
+                <option value="">Please choose</option>
+                <option>Me</option>
+                <option>A parent or family member</option>
+                <option>Someone else</option>
+              </select>
+            </div>
+
+            <div style="grid-column: 1 / -1;">
+              <label for="trying-to-do"><strong>What are you trying to do?</strong></label>
+              <textarea
+                id="trying-to-do"
+                name="what_are_you_trying_to_do"
+                rows="5"
+                required
+                placeholder="Example: I’m trying to play karaoke songs from my phone on my TV."
+              ></textarea>
+            </div>
+
+            <div style="grid-column: 1 / -1;">
+              <label for="what-happens"><strong>What happens when you try?</strong></label>
+              <textarea
+                id="what-happens"
+                name="what_happens_when_you_try"
+                rows="5"
+                required
+                placeholder="Example: The TV doesn’t show up when I try to cast from my phone."
+              ></textarea>
+            </div>
+
+            <div style="grid-column: 1 / -1;">
+              <label><strong>What equipment is involved?</strong> <span class="small-note">(check any that apply)</span></label>
+              <div class="check-grid">
+                <label><input type="checkbox" name="equipment_involved[]" value="TV" /> <span>TV</span></label>
+                <label><input type="checkbox" name="equipment_involved[]" value="Phone" /> <span>Phone</span></label>
+                <label><input type="checkbox" name="equipment_involved[]" value="Tablet" /> <span>Tablet</span></label>
+                <label><input type="checkbox" name="equipment_involved[]" value="Computer" /> <span>Computer</span></label>
+                <label><input type="checkbox" name="equipment_involved[]" value="Printer" /> <span>Printer</span></label>
+                <label><input type="checkbox" name="equipment_involved[]" value="Wi-Fi or router" /> <span>Wi-Fi / router</span></label>
+                <label><input type="checkbox" name="equipment_involved[]" value="Streaming device" /> <span>Streaming device</span></label>
+                <label><input type="checkbox" name="equipment_involved[]" value="Smart home device" /> <span>Smart-home device</span></label>
+                <label><input type="checkbox" name="equipment_involved[]" value="Other" /> <span>Other</span></label>
+              </div>
+            </div>
+
+            <div style="grid-column: 1 / -1;">
+              <label for="equipment-details"><strong>Anything you know about the equipment?</strong></label>
+              <input
+                id="equipment-details"
+                name="equipment_brand_model"
+                type="text"
+                placeholder="Example: Samsung TV, iPhone 14, Roku, HP printer — whatever you know is helpful."
+              />
+            </div>
+
+            <div style="grid-column: 1 / -1;">
+              <label for="urgency"><strong>How urgent is it?</strong></label>
+              <select id="urgency" name="urgency">
+                <option value="">Please choose</option>
+                <option>No rush</option>
+                <option>Soon</option>
+                <option>It’s keeping me from using something important</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="cta-button form-button">Send This to Jay</button>
+            <span class="small-note">
+              Not sure what the problem is? That’s okay. Describe what you see and what you were hoping would happen.
+            </span>
+          </div>
+        </form>
+
+        <div class="contact-list">
+          <div class="contact-item">Phone: (541) 224-7960</div>
+          <div class="contact-item">Email: hello@hometechcare.us</div>
+          <div class="contact-item">HomeTechCare.us/tellme</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-top">
+      <div>
+        <strong>HomeTechCare.us</strong><br />
+        Simple, reliable help for the technology in your home.
+      </div>
+      <div>
+        © <span id="year"></span> HomeTechCare. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const params = new URLSearchParams(window.location.search);
+      const currentSource = params.get("src") || params.get("source");
+
+      if (currentSource) {
+        localStorage.setItem("hometechcare_source", currentSource);
+      }
+
+      const savedSource = localStorage.getItem("hometechcare_source") || "tellme-direct";
+
+      const sourceField = document.getElementById("source");
+      const landingField = document.getElementById("landing_page");
+      const referrerField = document.getElementById("referrer");
+
+      if (sourceField) {
+        sourceField.value = savedSource;
+      }
+
+      if (landingField) {
+        landingField.value = window.location.href;
+      }
+
+      if (referrerField) {
+        referrerField.value = document.referrer || "direct";
+      }
+
+      const year = document.getElementById("year");
+      if (year) {
+        year.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
+</body>
+</html>
 
