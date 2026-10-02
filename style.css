@@ -663,10 +663,9 @@ input[type="checkbox"] {
   }
 }
 
-/* Site-only .us logo: display the artwork without the image's outer white margins. */
-.brand-logo[src*="HomeTechCare-site.png"] {
-  aspect-ratio: 4.7 / 1;
+
+/* Site-only logo: original artwork and handwritten .us, composed without resampling. */
+.brand-logo[src*="HomeTechCare-site.svg"] {
   height: auto;
-  object-fit: cover;
-  object-position: center;
+  object-fit: contain;
 }
