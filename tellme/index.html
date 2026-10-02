@@ -1,604 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HomeTechCare | Family Tech Care for the Technology in Your Home</title>
-  <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="HomeTechCare provides patient, practical family tech care by phone consultation and local support for computers, Wi-Fi, printers, TVs, phones, passwords, smart devices, and home technology projects in Northwest Oregon communities" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tell Me What’s Going On | HomeTechCare</title>
+  <meta name="description" content="Tell Jay what you need help with. Simple choices and plain-English questions for technology help at home.">
+  <link rel="canonical" href="https://hometechcare.us/tellme/">
+  <!-- Replace tellme/index.html only. Styles and scripts are included in this file. -->
   <style>
-    /* Keep the full intake button label readable within the existing header. */
-    .nav .tellme-link {
-      max-width: 260px;
-      white-space: normal;
-      text-align: center;
-      line-height: 1.25;
+    :root { color-scheme: light; --blue: #163f67; --ink: #20364b; --muted: #526576; --line: #c8d5df; --green: #446f2b; --orange: #ffad16; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f3f7fa; color: var(--ink); font: 16px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    a { color: var(--blue); text-underline-offset: 3px; }
+    .wrap { max-width: 1100px; margin: auto; padding-inline: 24px; }
+    .topbar { background: #fff; border-bottom: 1px solid #dce5ec; }
+    .topbar-inner { min-height: 86px; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 12px; }
+    .brand { display: block; line-height: 1; text-decoration: none; }
+    .brand img { display: block; width: 258px; max-width: 100%; height: auto; }
+    .brand-text { font-size: 25px; font-weight: 800; color: var(--blue); }
+    .brand-text span { color: var(--green); }
+    .top-links { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 12px 20px; font-size: 15px; font-weight: 600; }
+    .phone-link { white-space: nowrap; }
+    main { padding-block: 22px; }
+    .intro { margin-bottom: 16px; }
+    h1 { color: var(--blue); font-size: clamp(26px, 3.5vw, 34px); line-height: 1.15; letter-spacing: -.6px; margin: 0 0 8px; }
+    .intro p { margin: 0; color: var(--muted); max-width: 820px; }
+    form { background: #fff; border: 1px solid #dce5ec; border-radius: 12px; padding: 22px 24px; box-shadow: 0 3px 12px #163f6708; }
+    .section + .section { border-top: 1px solid #e2e8ee; margin-top: 20px; padding-top: 18px; }
+    h2 { margin: 0 0 12px; color: var(--blue); font-size: 19px; line-height: 1.3; }
+    .hint { color: var(--muted); font-size: 14px; font-weight: 400; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 16px; }
+    .two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .full { grid-column: 1 / -1; }
+    label, legend { font-size: 15px; font-weight: 600; }
+    .field > label { display: block; margin-bottom: 5px; }
+    .optional { font-weight: 400; font-size: 13px; color: var(--muted); }
+    input:not([type="checkbox"]):not([type="hidden"]), select, textarea { width: 100%; min-width: 0; min-height: 44px; border: 1px solid var(--line); border-radius: 6px; background: #fff; color: var(--ink); padding: 9px 11px; font: inherit; }
+    select { padding-right: 30px; }
+    textarea { display: block; min-height: 100px; resize: vertical; }
+    ::placeholder { color: #62717f; opacity: 1; }
+    :focus-visible { outline: 3px solid #2680ba; outline-offset: 3px; }
+    fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+    legend { padding: 0; margin-bottom: 9px; }
+    .checks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 12px; }
+    .choice { display: flex; align-items: center; gap: 9px; min-height: 44px; padding: 9px 10px; border: 1px solid #dce5ec; border-radius: 6px; background: #f8fafc; cursor: pointer; font-size: 15px; font-weight: 400; line-height: 1.3; }
+    .choice:has(input:checked) { border-color: #6f96b6; background: #eaf3fb; }
+    .choice input { flex: 0 0 auto; width: 18px; height: 18px; margin: 0; accent-color: var(--blue); }
+    .category-details { margin-top: 12px; }
+    .descriptions { margin-top: 16px; }
+    .privacy { margin: 9px 0 0; font-size: 13px; color: var(--muted); }
+    details { margin-top: 16px; border: 1px solid #dce5ec; border-radius: 7px; }
+    summary { cursor: pointer; padding: 12px 14px; color: var(--blue); font-size: 15px; font-weight: 650; }
+    details[open] summary { border-bottom: 1px solid #e2e8ee; }
+    .detail-body { padding: 14px; }
+    .detail-body > .grid { margin-top: 14px; }
+    .wifi-fields { margin-top: 14px; padding-top: 14px; border-top: 1px solid #e2e8ee; }
+    .wifi-fields h3 { font-size: 16px; margin: 0 0 10px; }
+    .other-time { margin-top: 7px; }
+    .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 18px; margin-top: 18px; }
+    button { min-height: 46px; border: 0; border-radius: 7px; background: var(--orange); color: #203347; padding: 11px 22px; font: inherit; font-weight: 750; cursor: pointer; }
+    button:hover { background: #ffc04c; }
+    .actions p { margin: 0; font-size: 14px; color: var(--muted); }
+    .urgent-note { margin: 10px 0 0; font-size: 14px; }
+    .contact-note { margin: 14px 0 0; font-size: 14px; color: var(--muted); text-align: center; }
+    footer { border-top: 1px solid #dce5ec; padding: 15px 0 20px; font-size: 13px; color: var(--muted); }
+    .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px 16px; }
+    [hidden] { display: none !important; }
+    .skip { position: absolute; left: 12px; top: -80px; background: #fff; padding: 10px; z-index: 2; }
+    .skip:focus { top: 8px; }
+    @media (max-width: 760px) {
+      .wrap { padding-inline: 18px; }
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .checks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      form { padding: 18px; }
+      .top-links { gap: 8px 14px; font-size: 14px; }
+      .brand img { width: 220px; }
     }
+    @media (max-width: 520px) {
+      .wrap { padding-inline: 14px; }
+      .topbar-inner { align-items: flex-start; flex-direction: column; gap: 10px; min-height: 0; }
+      .top-links { width: 100%; justify-content: space-between; }
+      main { padding-block: 18px; }
+      form { padding: 17px 14px; }
+      .grid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+      .checks { gap: 7px; }
+      .choice { font-size: 14px; padding: 9px 8px; gap: 7px; }
+      .actions { align-items: flex-start; }
+      button { width: 100%; }
+      .section + .section { margin-top: 18px; padding-top: 16px; }
+      .detail-body { padding: 12px; }
+    }
+    @media (max-width: 360px) { .checks { grid-template-columns: minmax(0, 1fr); } }
+    @media (prefers-reduced-motion: no-preference) { button, .choice { transition: background-color .12s; } }
   </style>
 </head>
-
 <body>
+  <a class="skip" href="#help-form">Skip to form</a>
   <header class="topbar">
-    <div class="container topbar-inner">
-      <a href="#top" class="brand" aria-label="HomeTechCare home">
-        <img src="HomeTechCare.png" alt="HomeTechCare" class="brand-logo" />
+    <div class="wrap topbar-inner">
+      <a class="brand" href="/" aria-label="HomeTechCare home">
+        <img id="brand-logo" src="/HomeTechCare.png" alt="HomeTechCare">
+        <span id="brand-fallback" class="brand-text" hidden>Home<span>Tech</span>Care</span>
       </a>
-
-      <nav class="nav" aria-label="Main navigation">
-        <a href="#family-tech-care">Family Tech Care</a>
-        <a href="https://jamesbernardwhite26-wrhqn.wordpress.com/">Articles</a>
-        <a href="#services">What We Help With</a>
-        <a href="service-area.html">Service Area</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#pricing">Pricing</a>
-        <a href="/tellme/" class="cta-button tellme-link">Tell Me What You Need Help With</a>
+      <nav class="top-links" aria-label="Page links">
+        <a href="/">Back to home</a>
+        <a class="phone-link" href="tel:+15412247960">Call (541) 224-7960</a>
+        <a href="sms:+15412247960">Text Jay</a>
       </nav>
     </div>
   </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Family tech care • practical advice first</div>
-          <h1>Patient, sensible help for the technology in your home</h1>
-          <p>
-            HomeTechCare helps people and families make good decisions about home technology.
-            We start with a simple phone consultation whenever possible, then recommend the most
-            sensible, cost-effective next step—whether that is a quick fix, a small setup, an in-home
-            visit, or a bigger project that needs a careful plan.
-          </p>
-
-          <div class="hero-buttons">
-            <a href="#family-tech-care" class="secondary-button">Learn About Family Tech Care</a>
-            <a href="#articles" class="secondary-button">Read Articles</a>
-          </div>
-
-          <div class="hero-points">
-            <span>✔ Calm, patient help</span>
-            <span>✔ Cost-conscious advice</span>
-            <span>✔ Serving Northwest Oregon communities</span>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <div class="mockup">
-            <div class="badge">A caring first call can prevent wasted time and money.</div>
-            <h2>Start with the right plan</h2>
-            <p>
-              Not every problem needs a house call, a new device, or an expensive upgrade.
-              We help you sort out what is really needed before you spend more than you should.
-            </p>
-
-            <div class="mini-list">
-              <div class="mini-item">Phone-first troubleshooting and advice</div>
-              <div class="mini-item">Help for parents and loved ones</div>
-              <div class="mini-item">Wi-Fi, printers, TVs, phones, and accounts</div>
-              <div class="mini-item">Small fixes and larger home tech projects</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="family-section">
-      <div class="container">
-        <div id="family-tech-care" class="section-heading anchor-target">
-          <h2>Family Tech Care</h2>
-          <p>
-            Technology problems are often more than technical. They can be frustrating, confusing,
-            expensive, and stressful—especially when you are trying to help a parent, spouse,
-            relative, or friend from across town or out of state.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <h3>A caring first response</h3>
-            <p>
-              I take time to listen, ask plain-language questions, and understand what is happening
-              before recommending a solution. The goal is to reduce stress, not add to it.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Practical, cost-effective advice</h3>
-            <p>
-              I will not push equipment, upgrades, or complicated services unless they make sense.
-              When a simple fix is enough, I will say so. When a bigger project is smarter, I will explain why.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Support for the whole family</h3>
-            <p>
-              I can help the person using the technology and also give family members a clear picture
-              of the problem, the options, and the best next step.
-            </p>
-          </article>
-        </div>
-
-        <div class="about-card card">
-          <div class="about-jay-grid">
-            <img src="jay-home-tech-care-square.jpg" alt="Jay from HomeTechCare" class="about-photo" />
-            <div>
-              <h3>About Jay</h3>
-              <p>
-                I’m Jay, the person behind HomeTechCare. My background is in technology, operations,
-                communications systems, and real-world problem solving. I started HomeTechCare to offer
-                patient, local help for the everyday technology people depend on at home—without confusing
-                jargon, rushed explanations, or unnecessary upselling.
-              </p>
-              <p>
-                My approach is simple: listen first, explain clearly, recommend the most sensible path,
-                and help you feel more confident about the technology in your home.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
-    <section class="articles-section" id="articles">
-      <div class="container">
-        <div class="section-heading anchor-target">
-          <h2>HomeTechCare Articles</h2>
-          <p>
-            Helping you help your family with everyday technology decisions, questions, and frustrations.
-          </p>
-        </div>
-
-        <div class="articles-card card">
-          <div>
-            <h3>HomeTechCare Knowledge Center</h3>
-            <p>
-              Whether you're helping a parent, spouse, or loved one, these articles explore everyday technology—from Wi-Fi and passwords to smart devices and streaming—to help you make informed decisions with confidence.
-            </p>
-            <p>
-              The articles are written to help readers think through common technology decisions before they become expensive, confusing, or frustrating.
-            </p>
-          </div>
-          <div class="articles-actions">
-            <a href="https://jamesbernardwhite26-wrhqn.wordpress.com/" class="cta-button" target="_blank" rel="noopener">Read the Articles</a>
-            <a href="#contact" class="secondary-button">Ask for Help</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div id="services" class="section-heading anchor-target">
-          <h2>What we help with</h2>
-          <p>
-            From small annoyances to bigger home technology projects, we help you understand the problem
-            and choose the right next step.
-          </p>
-        </div>
-
-        <div class="services-grid">
-          <article class="card">
-            <div class="service-icon">☎️</div>
-            <h3>Phone Consultations</h3>
-            <p>
-              A practical first conversation to understand the issue, narrow down the likely cause,
-              and decide whether remote help or an in-home visit makes sense.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="service-icon">💻</div>
-            <h3>Computers &amp; Wi-Fi</h3>
-            <p>
-              Help with slow computers, Wi-Fi coverage, router issues, device connections,
-              internet problems, and basic setup questions.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="service-icon">🖨️</div>
-            <h3>Printers &amp; Home Devices</h3>
-            <p>
-              Printer setup, device pairing, connection problems, updates, settings, and everyday equipment
-              that suddenly stops working the way it should.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="service-icon">📺</div>
-            <h3>TV, Streaming &amp; Remotes</h3>
-            <p>
-              Smart TVs, Roku, Fire TV, streaming apps, logins, remotes, sound issues,
-              and making entertainment systems easier to use.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="service-icon">🔐</div>
-            <h3>Accounts, Passwords &amp; Apps</h3>
-            <p>
-              Help with sign-ins, password resets, account organization, app setup, email access,
-              and reducing confusion across devices.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="service-icon">🛠️</div>
-            <h3>Projects Big &amp; Small</h3>
-            <p>
-              Planning help for new equipment, home office improvements, Wi-Fi upgrades,
-              smart devices, and practical technology improvements around the home.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div id="how-it-works" class="section-heading anchor-target">
-          <h2>How it works</h2>
-          <p>
-            The normal starting point is a phone consultation. That gives us a chance to understand the problem
-            before deciding what kind of help is actually needed.
-          </p>
-        </div>
-
-        <div class="steps-grid">
-          <article class="card">
-            <div class="step-number">1</div>
-            <h3>Tell me what is going on</h3>
-            <p>
-              Call, text, or send a message. You do not need to know the technical terms.
-              Just describe what is not working or what you want to accomplish.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="step-number">2</div>
-            <h3>We start by phone</h3>
-            <p>
-              We talk through the issue, check the obvious possibilities, and decide whether the problem
-              can be handled remotely or needs an in-home visit.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="step-number">3</div>
-            <h3>You get a sensible plan</h3>
-            <p>
-              I recommend the most practical and cost-effective next step, whether that is a quick fix,
-              guided help, a visit, or a larger project plan.
-            </p>
-          </article>
-        </div>
-
-        <div class="muted-box">
-          The goal is not to sell you more technology. The goal is to help you make the technology you already have work better—and to spend money only when it truly makes sense.
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div id="pricing" class="section-heading anchor-target">
-          <h2>Simple, transparent pricing</h2>
-          <p>
-            Every situation is a little different. We start with a conversation, then match the level of help
-            to the actual problem.
-          </p>
-        </div>
-
-        <div class="plans-grid">
-          <article class="card plan featured">
-            <h3>Initial Phone Consultation</h3>
-            <p class="price">Start here</p>
-            <ul>
-              <li>Best first step for most problems</li>
-              <li>Plain-language questions and practical guidance</li>
-              <li>Helps determine whether a visit is needed</li>
-              <li>Focused on avoiding unnecessary cost</li>
-            </ul>
-          </article>
-
-          <article class="card plan">
-            <h3>In-Home Tech Visit</h3>
-            <p class="price">$95 <span>/ first visit</span></p>
-            <ul>
-              <li>Local, patient help in your home</li>
-              <li>Setup, troubleshooting, and instruction</li>
-              <li>Good for issues that cannot be solved by phone</li>
-              <li>Clear recommendations before additional work</li>
-            </ul>
-          </article>
-
-          <article class="card plan">
-            <h3>Projects &amp; Ongoing Help</h3>
-            <p class="price">Ask us <span>about options</span></p>
-            <ul>
-              <li>Home office, Wi-Fi, streaming, and smart-device planning</li>
-              <li>Support for families helping parents or loved ones</li>
-              <li>Follow-up help when problems come back</li>
-              <li>Cost-conscious planning before purchases</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div id="contact" class="cta-band anchor-target">
-          <div>
-            <h2>Tell me what you need help with</h2>
-            <p>
-              Start by sharing what is going on in plain English. I will review it, ask a few practical questions,
-              and help you decide the most sensible next step.
-            </p>
-          </div>
-          <div>
-            <a href="tel:+15412247960" class="cta-button">Call or Text (541) 224-7960</a>
-          </div>
-        </div>
-
-        <form
-          class="contact-form"
-          action="https://formsubmit.co/hello@hometechcare.us"
-          method="POST"
-        >
-          <input type="hidden" name="_subject" value="🚨 NEW TECH HELP REQUEST - HomeTechCare" />
-          <input type="hidden" name="_next" value="https://hometechcare.us/thank-you.html" />
-          <input type="hidden" name="_bcc" value="e8yh4n9vus@pomail.net" />
-          <input type="hidden" name="source" id="source" />
-          <input type="hidden" name="landing_page" id="landing_page" />
-
-          <input
-            type="hidden"
-            name="_autoresponse"
-            value="Thank you for contacting HomeTechCare. We received your tech help request and will get back to you as soon as possible. Most requests begin with a simple phone consultation so we can understand the issue and recommend the most sensible next step. Please do not send passwords or private account information by email. If your issue is urgent, please call or text us directly."
-          />
-          <input type="hidden" name="_template" value="table" />
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
-
-          <div class="form-intro card">
-            <h3>Tell me what is going on</h3>
-            <p>
-              You do not need to know the technical terms. Answer what you can, skip what you do not know,
-              and describe the problem in your own words.
-            </p>
-            <p class="small-note">
-              Please do not include passwords, payment information, account numbers, or private login details in this form.
-            </p>
-          </div>
-
-          <div class="form-grid">
-            <div>
-              <label for="name"><strong>Your Name</strong></label>
-              <input id="name" name="name" type="text" required />
-            </div>
-
-            <div>
-              <label for="phone"><strong>Phone Number</strong></label>
-              <input id="phone" name="phone" type="tel" required />
-            </div>
-
-            <div>
-              <label for="email"><strong>Your Email</strong></label>
-              <input id="email" name="email" type="email" />
-            </div>
-
-            <div>
-              <label for="preferred-contact"><strong>Best way to contact you</strong></label>
-              <select id="preferred-contact" name="preferred_contact">
-                <option value="">Please choose</option>
-                <option>Call me</option>
-                <option>Text me</option>
-                <option>Email me</option>
-                <option>Any of these is fine</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="best-time"><strong>Best time to reach you</strong></label>
-              <input id="best-time" name="best_time_to_contact" type="text" placeholder="Example: weekday mornings, after 4 PM, weekends" />
-            </div>
-
-            <div>
-              <label for="help-for"><strong>Who needs help?</strong></label>
-              <select id="help-for" name="help_for">
-                <option value="">Please choose</option>
-                <option>Me</option>
-                <option>A parent or loved one</option>
-                <option>My household or family</option>
-                <option>Someone else</option>
-              </select>
-            </div>
-
-            <div style="grid-column: 1 / -1;">
-              <label><strong>What kind of help do you need?</strong></label>
-              <div class="check-grid">
-                <label><input type="checkbox" name="help_needed[]" value="Wi-Fi or internet problems"  /> <span>Wi-Fi or internet problems</span></label>
-                <label><input type="checkbox" name="help_needed[]" value="Computer running slow or not working"  /> <span>Computer running slow or not working</span></label>
-                <label><input type="checkbox" name="help_needed[]" value="Printer setup or printer problem"  /> <span>Printer setup or printer problem</span></label>
-                <label><input type="checkbox" name="help_needed[]" value="Phone or tablet help"  /> <span>Phone or tablet help</span></label>
-                <label><input type="checkbox" name="help_needed[]" value="Email, passwords, or account access"  /> <span>Email, passwords, or account access</span></label>
-                <label><input type="checkbox" name="help_needed[]" value="TV, streaming, Roku, Fire TV, or remotes"  /> <span>TV, streaming, Roku, Fire TV, or remotes</span></label>
-                <label><input type="checkbox" name="help_needed[]" value="Smart home devices"  /> <span>Smart home devices</span></label>
-                <label><input type="checkbox" name="help_needed[]" value="New device setup or data transfer"  /> <span>New device setup or data transfer</span></label>
-                <label><input type="checkbox" name="help_needed[]" value="Photos, cloud storage, backup, or files"  /> <span>Photos, cloud storage, backup, or files</span></label>
-                <label><input type="checkbox" name="help_needed[]" value="Scam, pop-up, or security concern"  /> <span>Scam, pop-up, or security concern</span></label>
-                <label><input type="checkbox" name="help_needed[]" value="Help for a parent or loved one"  /> <span>Help for a parent or loved one</span></label>
-                <label><input type="checkbox" name="help_needed[]" value="Not sure - I need help figuring it out"  /> <span>Not sure — I need help figuring it out</span></label>
-              </div>
-            </div>
-
-            <div style="grid-column: 1 / -1;">
-              <label for="message"><strong>What is going on?</strong></label>
-              <textarea
-                id="message"
-                name="message"
-                rows="6"
-                required
-                placeholder="Describe what you are trying to do, what is not working, when it started, and anything you have already tried. Plain English is perfect."
-              ></textarea>
-            </div>
-
-            <div style="grid-column: 1 / -1;">
-              <label><strong>Devices involved</strong> <span class="small-note">(check any that apply)</span></label>
-              <div class="check-grid">
-                <label><input type="checkbox" name="devices_involved[]" value="Windows computer"  /> <span>Windows computer</span></label>
-                <label><input type="checkbox" name="devices_involved[]" value="Mac computer"  /> <span>Mac computer</span></label>
-                <label><input type="checkbox" name="devices_involved[]" value="iPhone"  /> <span>iPhone</span></label>
-                <label><input type="checkbox" name="devices_involved[]" value="Android phone"  /> <span>Android phone</span></label>
-                <label><input type="checkbox" name="devices_involved[]" value="iPad or tablet"  /> <span>iPad or tablet</span></label>
-                <label><input type="checkbox" name="devices_involved[]" value="Printer"  /> <span>Printer</span></label>
-                <label><input type="checkbox" name="devices_involved[]" value="Router or Wi-Fi equipment"  /> <span>Router or Wi-Fi equipment</span></label>
-                <label><input type="checkbox" name="devices_involved[]" value="Smart TV"  /> <span>Smart TV</span></label>
-                <label><input type="checkbox" name="devices_involved[]" value="Streaming device"  /> <span>Streaming device</span></label>
-                <label><input type="checkbox" name="devices_involved[]" value="Smart home device"  /> <span>Smart home device</span></label>
-              </div>
-            </div>
-
-            <div>
-              <label for="device-details"><strong>Device brand/model, if known</strong></label>
-              <input id="device-details" name="device_brand_model" type="text" placeholder="Example: iPhone 13, HP printer, Dell laptop" />
-            </div>
-
-            <div>
-              <label for="operating-system"><strong>Operating system, if known</strong></label>
-              <input id="operating-system" name="operating_system" type="text" placeholder="Example: Windows 11, macOS, iOS 18, Android, not sure" />
-            </div>
-
-            <div>
-              <label for="internet-provider"><strong>Internet provider, if relevant</strong></label>
-              <select id="internet-provider" name="internet_provider">
-                <option value="">Please choose</option>
-                <option>Spectrum</option>
-                <option>Ziply Fiber</option>
-                <option>T-Mobile Home Internet</option>
-                <option>Verizon Home Internet</option>
-                <option>CenturyLink / Lumen</option>
-                <option>Xfinity</option>
-                <option>Other</option>
-                <option>Not sure</option>
-                <option>Not relevant to this issue</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="internet-scope"><strong>If internet/Wi-Fi, what is affected?</strong></label>
-              <select id="internet-scope" name="internet_wifi_scope">
-                <option value="">Please choose</option>
-                <option>One device</option>
-                <option>Several devices</option>
-                <option>Everything in the house</option>
-                <option>Only certain rooms</option>
-                <option>Not sure</option>
-                <option>Not relevant</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="router-location"><strong>Router/modem location, if known</strong></label>
-              <input id="router-location" name="router_modem_location" type="text" placeholder="Example: office, living room, garage, closet, not sure" />
-            </div>
-
-            <div>
-              <label for="wifi-password"><strong>Do you know your Wi-Fi name/password?</strong></label>
-              <select id="wifi-password" name="wifi_name_password_available">
-                <option value="">Please choose</option>
-                <option>Yes, I can have it available</option>
-                <option>No</option>
-                <option>Not sure</option>
-                <option>Not relevant</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="urgency"><strong>How urgent is this?</strong></label>
-              <select id="urgency" name="urgency">
-                <option value="">Please choose</option>
-                <option>Not urgent</option>
-                <option>Within the next few days</option>
-                <option>As soon as possible</option>
-                <option>Urgent - no internet, cannot work, or cannot communicate</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="next-step"><strong>Preferred next step</strong></label>
-              <select id="next-step" name="preferred_next_step">
-                <option value="">Please choose</option>
-                <option>Phone consultation first</option>
-                <option>Text or email first</option>
-                <option>In-home visit</option>
-                <option>Not sure - please recommend the best next step</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-actions">
-            <button type="submit" class="cta-button form-button">Send Tech Help Request</button>
-            <span class="small-note form-note">Not sure what the problem is? That is completely okay. We will figure it out together.</span>
-          </div>
-        </form>
-
-        <div class="contact-list">
-          <div class="contact-item">Phone: (541) 224-7960</div>
-          <div class="contact-item">Email: hello@hometechcare.us</div>
-          <div class="contact-item">Service Area: Northwest Oregon communities</div>
-        </div>
-
-        <p class="small-note">
-          HomeTechCare provides technology setup assistance, education, planning, and support. We do not perform licensed electrical work.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-top">
-      <div>
-        <strong>HomeTechCare.us</strong><br />
-        Family tech care for the technology in your home
-      </div>
-      <div>
-        © <span id="year"></span> HomeTechCare. All rights reserved.
-      </div>
+  <main class="wrap">
+    <div class="intro">
+      <h1>Tell me what’s going on</h1>
+      <p>Check what fits, tell me a little about it, and I’ll get back to you. Plain English is perfect. For required choices, “Not sure” is always okay when it fits.</p>
     </div>
-  </footer>
+    <form id="help-form" action="https://formsubmit.co/hello@hometechcare.us" method="POST">
+      <!-- Working FormSubmit settings carried forward from the existing /tellme page. -->
+      <input type="hidden" name="_subject" value="🚨 NEW TELL ME REQUEST - HomeTechCare">
+      <input type="hidden" name="_next" value="https://hometechcare.us/thank-you.html">
+      <input type="hidden" name="_bcc" value="e8yh4n9vus@pomail.net">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="request_type" value="tellme">
+      <input type="hidden" name="source" id="source" value="tellme-direct">
+      <input type="hidden" name="landing_page" id="landing_page" value="https://hometechcare.us/tellme/">
+      <input type="hidden" name="referrer" id="referrer" value="direct">
+      <input type="hidden" name="_autoresponse" value="Thank you for contacting HomeTechCare. I received your message and will review what you sent. I’ll get back to you with the most sensible next step. Please do not send passwords, payment information, account numbers, or private login details by email.">
+      <input type="text" name="_honey" hidden tabindex="-1" autocomplete="off" aria-label="Leave this field empty">
 
+      <section class="section" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">1. About you <span class="hint">— * required</span></h2>
+        <div class="grid">
+          <div class="field"><label for="name">Your name *</label><input id="name" name="name" required autocomplete="name" maxlength="120"></div>
+          <div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone" type="tel" required autocomplete="tel" maxlength="40"></div>
+          <div class="field"><label for="email">Email <span id="email-note" class="optional">(optional)</span></label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" aria-describedby="email-note"></div>
+          <div class="field"><label for="preferred-contact">Best way to contact you *</label><select required id="preferred-contact" name="preferred_contact"><option value="">Please choose</option><option>Call</option><option>Text</option><option>Email</option><option>Any of these is fine</option></select></div>
+          <div class="field"><label for="help-for">Who needs help? *</label><select required id="help-for" name="help_for"><option value="">Please choose</option><option>Me</option><option>A parent or loved one</option><option>My household or family</option><option>Someone else</option></select></div>
+          <div class="field"><label for="city">Where is help needed? *</label><input required id="city" name="help_location" placeholder="City or ZIP code" maxlength="120"></div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="help-heading">
+        <h2 id="help-heading">2. What do you need help with? *</h2>
+        <fieldset>
+          <legend class="hint">Choose at least one. Check all that fit.</legend>
+          <div class="checks" id="help-categories">
+            <label class="choice"><input type="checkbox" name="help_needed[]" value="Wi-Fi or internet" data-topic="wifi"><span>Wi-Fi or internet</span></label>
+            <label class="choice"><input type="checkbox" name="help_needed[]" value="Computer help" data-topic="computer"><span>Computer help</span></label>
+            <label class="choice"><input type="checkbox" name="help_needed[]" value="Printer or scanner" data-topic="printer"><span>Printer or scanner</span></label>
+            <label class="choice"><input type="checkbox" name="help_needed[]" value="Phone or tablet" data-topic="phone"><span>Phone or tablet</span></label>
+            <label class="choice"><input type="checkbox" name="help_needed[]" value="TV, streaming or sound" data-topic="tv"><span>TV, streaming or sound</span></label>
+            <label class="choice"><input type="checkbox" name="help_needed[]" value="Email, passwords or accounts" data-topic="accounts"><span>Email, passwords or accounts</span></label>
+            <label class="choice"><input type="checkbox" name="help_needed[]" value="Smart home devices" data-topic="smart"><span>Smart home devices</span></label>
+            <label class="choice"><input type="checkbox" name="help_needed[]" value="New device or moving setup" data-topic="setup"><span>New device or moving setup</span></label>
+            <label class="choice"><input type="checkbox" name="help_needed[]" value="Photos, files or backups" data-topic="files"><span>Photos, files or backups</span></label>
+            <label class="choice"><input type="checkbox" name="help_needed[]" value="Scam or security concern" data-topic="security"><span>Scam or security concern</span></label>
+            <label class="choice"><input type="checkbox" name="help_needed[]" value="Help for a parent or loved one" data-topic="family"><span>Help for a parent or loved one</span></label>
+            <label class="choice"><input type="checkbox" name="help_needed[]" value="Something else or not sure" data-topic="other"><span>Something else / not sure</span></label>
+          </div>
+        </fieldset>
+        <!-- Topic-specific questions appear only after selecting a matching category. -->
+        <div class="category-details grid two" id="category-details" hidden></div>
+        <div class="grid two descriptions">
+          <div class="field"><label for="trying-to-do">What are you trying to do? *</label><textarea id="trying-to-do" name="what_are_you_trying_to_do" rows="3" required maxlength="5000" placeholder="Example: Watch my shows, print from my phone, or set up a new computer."></textarea></div>
+          <div class="field"><label for="what-happens">What happens when you try? *</label><textarea required id="what-happens" name="what_happens_when_you_try" rows="3" maxlength="5000" placeholder="Tell me what you see or any error message. For a new setup, write “New setup” or “Not tried yet.”"></textarea></div>
+        </div>
+        <p class="privacy">Please leave out passwords, payment information, account numbers, and private login details.</p>
+
+        <div style="margin-top:16px">
+            <fieldset>
+              <legend>Devices involved * <span class="hint">— choose at least one</span></legend>
+              <div class="checks" id="devices">
+                <label class="choice"><input type="checkbox" name="equipment_involved[]" value="Windows computer"><span>Windows computer</span></label>
+                <label class="choice"><input type="checkbox" name="equipment_involved[]" value="Mac computer"><span>Mac computer</span></label>
+                <label class="choice"><input type="checkbox" name="equipment_involved[]" value="Chromebook"><span>Chromebook</span></label>
+                <label class="choice"><input type="checkbox" name="equipment_involved[]" value="iPhone"><span>iPhone</span></label>
+                <label class="choice"><input type="checkbox" name="equipment_involved[]" value="Android phone"><span>Android phone</span></label>
+                <label class="choice"><input type="checkbox" name="equipment_involved[]" value="iPad or tablet"><span>iPad or tablet</span></label>
+                <label class="choice"><input type="checkbox" name="equipment_involved[]" value="Printer or scanner"><span>Printer or scanner</span></label>
+                <label class="choice"><input type="checkbox" name="equipment_involved[]" value="Router or Wi-Fi equipment"><span>Router / Wi-Fi equipment</span></label>
+                <label class="choice"><input type="checkbox" name="equipment_involved[]" value="TV"><span>TV</span></label>
+                <label class="choice"><input type="checkbox" name="equipment_involved[]" value="Streaming device"><span>Streaming device</span></label>
+                <label class="choice"><input type="checkbox" name="equipment_involved[]" value="Cable or satellite box"><span>Cable / satellite box</span></label>
+                <label class="choice"><input type="checkbox" name="equipment_involved[]" value="Remote control"><span>Remote control</span></label>
+                <label class="choice"><input type="checkbox" name="equipment_involved[]" value="Speakers, soundbar or audio system"><span>Speakers / soundbar / audio</span></label>
+                <label class="choice"><input type="checkbox" name="equipment_involved[]" value="Smart home device"><span>Smart home device</span></label>
+                <label class="choice"><input type="checkbox" name="equipment_involved[]" value="Other or not sure"><span>Other / not sure</span></label>
+              </div>
+            </fieldset>
+        </div>
+        <div class="grid two" style="margin-top:14px">
+              <div class="field"><label for="started">When did this start? *</label><select required id="started" name="when_it_started"><option value="">Please choose</option><option>Today</option><option>Within the last few days</option><option>Within the last few weeks</option><option>It has been a while</option><option>After a move or new equipment</option><option>After an update or other change</option><option>This is a new setup</option><option>Not sure</option></select></div>
+              <div class="field"><label for="already-tried">Anything you already tried? *</label><input required id="already-tried" name="already_tried" placeholder="Restarted it, checked cables, nothing yet, or not sure" maxlength="1000"></div>
+        </div>
+
+            <div class="wifi-fields" id="wifi-details" hidden>
+              <h3>Internet / Wi-Fi</h3>
+              <div class="grid two">
+                <div class="field"><label for="internet-provider">Internet provider *</label><select id="internet-provider" name="internet_provider"><option value="">Please choose</option><option>Ziply Fiber</option><option>Xfinity</option><option>Spectrum</option><option>CenturyLink / Lumen</option><option>T-Mobile Home Internet</option><option>Verizon Home Internet</option><option>Starlink</option><option>Other</option><option>Not sure</option><option>Not relevant</option></select></div>
+                <div class="field"><label for="internet-scope">What is affected? *</label><select id="internet-scope" name="internet_wifi_scope"><option value="">Please choose</option><option>One device</option><option>Several devices</option><option>Everything in the house</option><option>Only certain rooms</option><option>Not sure</option><option>Not relevant</option></select></div>
+                <div class="field"><label for="router-location">Where is the router / modem?</label><select id="router-location" name="router_modem_location"><option value="">Please choose</option><option>Living room</option><option>Office</option><option>Bedroom</option><option>Garage</option><option>Closet or cabinet</option><option>Other room</option><option>Not sure</option><option>Not relevant</option></select></div>
+                <div class="field"><label for="wifi-password">Can you have the Wi-Fi name / password ready?</label><select id="wifi-password" name="wifi_name_password_available" aria-describedby="wifi-note"><option value="">Please choose</option><option>Yes, I can have it available</option><option>No</option><option>Not sure</option><option>Not relevant</option></select></div>
+              </div>
+              <p id="wifi-note" class="privacy">Just tell me whether you have it. Don’t enter the password here.</p>
+            </div>
+        <details id="extra-details">
+          <summary>Brand, model &amp; technical details <span class="optional">(optional)</span></summary>
+          <div class="detail-body">
+            <div class="grid two">
+              <div class="field"><label for="equipment-details">Brand or model, if known</label><input id="equipment-details" name="equipment_brand_model" placeholder="Example: Samsung TV, HP printer, iPhone 13" maxlength="500"></div>
+              <div class="field"><label for="operating-system">System, if known</label><select id="operating-system" name="operating_system"><option value="">Please choose</option><option>Windows</option><option>macOS (Mac)</option><option>iPhone / iPad</option><option>Android</option><option>ChromeOS (Chromebook)</option><option>More than one</option><option>Other</option><option>Not sure</option></select></div>
+            </div>
+
+          </div>
+        </details>
+      </section>
+
+      <section class="section" aria-labelledby="next-heading">
+        <h2 id="next-heading">3. What works for you?</h2>
+        <div class="grid">
+          <div class="field"><label for="best-time">Best time to reach you *</label><select required id="best-time" name="best_time_to_contact"><option value="">Please choose</option><option>Weekday mornings</option><option>Weekday afternoons</option><option>Weekday evenings</option><option>Weekends</option><option>Any time is fine</option><option value="Another time">Another time — I’ll explain</option></select><div class="other-time" id="other-time-wrap" hidden><label class="optional" for="other-time">What time works?</label><input id="other-time" name="contact_time_details" placeholder="Example: Tuesday after 4 PM" maxlength="200" disabled></div></div>
+          <div class="field"><label for="urgency">How urgent is it? *</label><select required id="urgency" name="urgency"><option value="">Please choose</option><option>No rush</option><option>Within the next few days</option><option>As soon as possible</option><option value="Urgent">Urgent — I can’t use something important</option></select></div>
+          <div class="field"><label for="next-step">Preferred next step *</label><select required id="next-step" name="preferred_next_step"><option value="">Please choose</option><option>Phone consultation first</option><option>Text or email first</option><option>Discuss an in-home visit</option><option>Please recommend the next step</option></select></div>
+        </div>
+        <p class="urgent-note" id="urgent-note" hidden>For urgent help, please <a href="tel:+15412247960">call</a> or <a href="sms:+15412247960">text (541) 224-7960</a> as well. This form isn’t monitored continuously.</p>
+        <div class="actions"><button type="submit">Send This to Jay</button><p>I’ll review your request and get back to you with the next step.</p></div>
+      </section>
+      <noscript><p class="privacy">You can fill in and send this form without JavaScript. Add any extra details to the description boxes.</p></noscript>
+    </form>
+    <p class="contact-note">Prefer to talk? <a href="tel:+15412247960">Call</a> or <a href="sms:+15412247960">text (541) 224-7960</a> · <a href="mailto:hello@hometechcare.us">hello@hometechcare.us</a></p>
+  </main>
+  <footer><div class="wrap footer-inner"><span>Simple, reliable help for the technology in your home.</span><span>© <span id="year">2026</span> HomeTechCare</span></div></footer>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const params = new URLSearchParams(window.location.search);
-      const currentSource = params.get("src");
+    (() => {
+      'use strict';
+      const byId = id => document.getElementById(id);
+      const logo = byId('brand-logo');
+      const showBrandText = () => { logo.hidden = true; byId('brand-fallback').hidden = false; };
+      logo.addEventListener('error', showBrandText);
+      if (logo.complete && !logo.naturalWidth) showBrandText();
+      byId('year').textContent = new Date().getFullYear();
 
-      if (currentSource) {
-        localStorage.setItem("hometechcare_source", currentSource);
+      // Explicit link source wins, even when browser storage is unavailable.
+      const params = new URLSearchParams(location.search);
+      const currentSource = params.get('src') || params.get('source');
+      let savedSource = '';
+      try {
+        savedSource = localStorage.getItem('hometechcare_source') || '';
+        if (currentSource) localStorage.setItem('hometechcare_source', currentSource);
+      } catch (_) { /* Tracking must never prevent a help request. */ }
+      byId('source').value = currentSource || savedSource || 'tellme-direct';
+      byId('landing_page').value = location.href;
+      byId('referrer').value = document.referrer || 'direct';
+
+      const topics = {
+        wifi: ['Wi-Fi / internet: what fits best?', 'No internet connection', 'Slow internet', 'Weak Wi-Fi in some rooms', 'Connection keeps dropping', 'Connect a device to Wi-Fi', 'Set up or replace a router', 'Plan a Wi-Fi improvement'],
+        computer: ['Computer: what fits best?', 'Slow or freezing', 'Won’t turn on or start', 'Updates or software trouble', 'Connect an accessory', 'Set up a new computer', 'Home office setup', 'Learn how to use it'],
+        printer: ['Printer / scanner: what fits best?', 'Won’t print', 'Shows offline or won’t connect', 'Print from a phone or tablet', 'Set up a new printer', 'Scanning help', 'Print quality or paper problem'],
+        phone: ['Phone / tablet: what fits best?', 'Set up a new phone or tablet', 'Move contacts, photos or files', 'Calls or messages', 'Apps or settings', 'Bluetooth or device pairing', 'Make it easier to see, hear or use', 'Learn how to use it'],
+        tv: ['TV / streaming: what fits best?', 'No picture or sound', 'Set up streaming or an app', 'Remote control trouble', 'Cast or mirror a phone to the TV', 'Cable or satellite TV', 'Connect speakers, a soundbar or karaoke', 'Make TV easier to use'],
+        accounts: ['Email / accounts: what fits best?', 'Can’t sign in', 'Password reset or account recovery', 'Email isn’t working', 'Set up email on a device', 'Organize accounts or passwords', 'Extra sign-in code or verification', 'Help with an app or subscription'],
+        smart: ['Smart home: what fits best?', 'Camera or video doorbell', 'Smart speaker or voice assistant', 'Lights, plugs or switches', 'Thermostat', 'Connect or pair a device', 'Device stopped working', 'Plan a simple smart home setup'],
+        setup: ['Setup / moving: what fits best?', 'Set up after a move', 'Set up a new device', 'Reconnect existing equipment', 'Transfer information to a new device', 'Plan internet or Wi-Fi before a move', 'Set up a home office', 'Help choosing equipment'],
+        files: ['Photos / files: what fits best?', 'Move or organize photos', 'Back up important files', 'Cloud storage or syncing', 'Storage is full', 'Find missing files', 'Share photos with family'],
+        security: ['Security concern: what fits best?', 'Suspicious email or text', 'Unexpected pop-up or warning', 'Concern about an account', 'Someone asked for remote access', 'Check basic security settings', 'Learn how to avoid scams'],
+        family: ['Family help: what fits best?', 'Make TV or phone simpler', 'Help from a distance', 'Set up technology for a loved one', 'Patient one-on-one instruction', 'Help with JubileeTV', 'Help with a simplified phone', 'Plan ongoing help'],
+        other: ['Something else: what fits best?', 'I don’t know what’s wrong', 'Several things need attention', 'I want to learn how to use something', 'I’d like advice before buying', 'I need a home technology plan', 'Something else']
+      };
+      const specificNames = { wifi: 'wifi_help', computer: 'computer_help', printer: 'printer_help', phone: 'phone_tablet_help', tv: 'tv_streaming_help', accounts: 'account_help', smart: 'smart_home_help', setup: 'setup_moving_help', files: 'photos_files_help', security: 'security_help', family: 'family_help', other: 'other_help' };
+      const detailArea = byId('category-details');
+      // Build once so selected answers survive temporarily unchecking a category.
+      for (const [key, [labelText, ...options]] of Object.entries(topics)) {
+        const field = document.createElement('div');
+        field.className = 'field'; field.id = 'topic-' + key; field.hidden = true;
+        const label = document.createElement('label');
+        label.htmlFor = 'specific-' + key; label.textContent = labelText + ' *';
+        const select = document.createElement('select');
+        select.id = label.htmlFor; select.name = specificNames[key]; select.disabled = true;
+        select.add(new Option('Please choose — not sure is okay', ''));
+        for (const option of options) select.add(new Option(option, option));
+        select.add(new Option('Other / not sure', 'Other / not sure'));
+        field.append(label, select); detailArea.append(field);
       }
-
-      const savedSource = localStorage.getItem("hometechcare_source") || "direct";
-
-      const sourceField = document.getElementById("source");
-      const landingField = document.getElementById("landing_page");
-
-      if (sourceField) {
-        sourceField.value = savedSource;
+      function validateChoiceGroup(id, message) {
+        const checks = Array.from(byId(id).querySelectorAll('input[type="checkbox"]'));
+        checks[0].setCustomValidity(checks.some(check => check.checked) ? '' : message);
       }
-
-      if (landingField) {
-        landingField.value = window.location.href;
+      function syncDevices() {
+        validateChoiceGroup('devices', 'Choose at least one device, or select “Other / not sure.”');
       }
-
-      const year = document.getElementById("year");
-      if (year) {
-        year.textContent = new Date().getFullYear();
+      byId('devices').addEventListener('change', syncDevices);
+      function syncTopics() {
+        let count = 0;
+        for (const check of document.querySelectorAll('[data-topic]')) {
+          const field = byId('topic-' + check.dataset.topic);
+          field.hidden = !check.checked;
+          field.querySelector('select').disabled = !check.checked;
+          field.querySelector('select').required = check.checked;
+          if (check.checked) count++;
+        }
+        detailArea.hidden = count === 0;
+        validateChoiceGroup('help-categories', 'Choose at least one kind of help, or select “Something else / not sure.”');
+        const needsWifi = document.querySelector('[data-topic="wifi"]').checked;
+        byId('wifi-details').hidden = !needsWifi;
+        for (const id of ['internet-provider', 'internet-scope', 'router-location', 'wifi-password']) {
+          byId(id).disabled = !needsWifi;
+          byId(id).required = needsWifi && ['internet-provider', 'internet-scope'].includes(id);
+        }
       }
-    });
+      byId('help-categories').addEventListener('change', syncTopics);
+      function syncContact() {
+        const emailRequired = byId('preferred-contact').value === 'Email';
+        byId('email').required = emailRequired;
+        byId('email-note').textContent = emailRequired ? '(required for email replies) *' : '(optional)';
+      }
+      byId('preferred-contact').addEventListener('change', syncContact);
+      function syncTime() {
+        const otherTime = byId('best-time').value === 'Another time';
+        byId('other-time-wrap').hidden = !otherTime;
+        byId('other-time').disabled = !otherTime;
+        byId('other-time').required = otherTime;
+      }
+      byId('best-time').addEventListener('change', syncTime);
+      function syncUrgency() { byId('urgent-note').hidden = byId('urgency').value !== 'Urgent'; }
+      byId('urgency').addEventListener('change', syncUrgency);
+      function syncAll() { syncTopics(); syncDevices(); syncContact(); syncTime(); syncUrgency(); }
+      syncAll();
+      window.addEventListener('pageshow', syncAll);
+      byId('help-form').addEventListener('submit', event => {
+        syncAll();
+        if (!byId('help-form').reportValidity()) event.preventDefault();
+      });
+    })();
   </script>
-
-  <script src="script.js"></script>
 </body>
 </html>
