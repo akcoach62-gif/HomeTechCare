@@ -104,7 +104,7 @@ main[id] {
 
 /* Hero */
 .hero {
-  padding: 1.25rem 0 4.5rem;
+  padding: 1.25rem 0 1.5rem;
   background: linear-gradient(135deg, #ffffff 0%, #edf6ff 100%);
 }
 
@@ -244,7 +244,7 @@ p {
 
 /* Sections */
 section {
-  padding: 4.5rem 0;
+  padding: 2rem 0;
 }
 
 .section-heading {
@@ -567,7 +567,7 @@ input[type="checkbox"] {
 @media (max-width: 980px) {
   .topbar-inner {
     min-height: auto;
-    padding: 1rem 0;
+    padding: 3rem 0;
     align-items: flex-start;
     flex-direction: column;
   }
@@ -622,13 +622,11 @@ input[type="checkbox"] {
   }
 
   .hero {
-    padding: 3.5rem 0;
+     padding: 1.25rem 0 1.5rem;
   }
 
   section {
-    padding: 3rem 0;
-  }
-
+    padding: 1.5rem 0;
   .why-grid,
   .services-grid,
   .steps-grid,
